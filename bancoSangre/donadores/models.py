@@ -4,8 +4,8 @@ from django.db import models
 from django.db import models
 
 class donadores(models.Model):
-    id_donador = models.AutoField(primary_key=True)  # Clave primaria autoincremental
-    nombre = models.CharField(max_length=15)  # Se amplió para nombres largos
+    id_donador = models.AutoField(primary_key=True)  
+    nombre = models.CharField(max_length=15) 
     apellidoP = models.CharField(max_length=15)
     apellidoM = models.CharField(max_length=15)
     telefono = models.CharField(max_length=10)  # Tamaño suficiente para números con prefijo
