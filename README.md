@@ -1,83 +1,142 @@
-# 📌 Configuración del Proyecto Django con PostgreSQL
+# Manual de Instalación y Configuración del Proyecto BancoSangre
 
-Este documento describe los pasos necesarios para configurar y ejecutar un proyecto Django con PostgreSQL en una nueva computadora.
+## 1. Clonación del Repositorio con Todas las Ramas
 
----
+### Clonar el repositorio con todas sus ramas remotas
 
-## 🚀 Instalación de Python y Creación del Entorno Virtual
+Para clonar el repositorio completo con todas las ramas, utiliza el siguiente comando:
 
-1. **Verificar la versión de Python**  
-   Asegúrate de que tienes la misma versión con la cual se trabaja en el proyecto (ejemplo: `3.12.9`):  
-   ```bash
-   python --version
-   ```
+```bash
+git clone --branch main https://github.com/MicheRomero3012/BancoSangre.git
+```
 
-2. **Crear el entorno virtual**  
-   ```bash
-   python -m venv venv
-   ```
+> Esto descarga el repositorio y te coloca directamente en la rama `main`. Al usar `--branch main`, te aseguras de clonar desde la rama principal.
 
-3. **Activar el entorno virtual**  
-   - En **Windows**:
-     ```bash
-     venv\Scripts\activate
-     ```
-   - En **Mac/Linux**:
-     ```bash
-     source venv/bin/activate
-     ```
+### Verificar las ramas disponibles
 
-4. **Instalar las dependencias del proyecto**  
-   ```bash
-   pip install -r requirements.txt
-   ```
+Una vez que el repositorio se haya clonado, puedes listar todas las ramas disponibles:
 
----
+```bash
+git branch -a
+```
 
-## 🛠️ Instalación y Configuración de PostgreSQL
+> Esto mostrará tanto las ramas locales como las remotas. Las ramas remotas estarán listadas como `remotes/origin/nombre_de_rama`.
 
-1. **Descargar e instalar PostgreSQL**  
-   Descárgalo desde: [https://www.postgresql.org/download/](https://www.postgresql.org/download/)
+### Cambiar a otra rama
 
-2. **Configuración básica:**  
-   - **Usuario:** `postgres` (por defecto)  
-   - **Contraseña:** Elegida por el usuario (se deberá actualizar dentro del proyecto)  
-   - **Puerto:** `5432` (por defecto)  
+Para cambiar a una rama diferente (por ejemplo, la rama `frontend`), utiliza el siguiente comando:
+
+```bash
+git checkout frontend
+```
+
+> Esto cambiará tu rama activa a `frontend`.
+
+### Actualizar las ramas remotas
+
+Si quieres asegurarte de que tienes todas las actualizaciones de las ramas remotas, puedes ejecutar:
+
+```bash
+git fetch
+```
+
+> Esto actualizará tu repositorio local con las ramas y los cambios más recientes desde el repositorio remoto.
 
 ---
 
-## 📂 Migración de la Base de Datos desde Django a PostgreSQL
+## 2. Creación del Entorno Virtual
 
-1. **Generar migraciones**  
-   ```bash
-   python manage.py makemigrations
-   ```
+Después de clonar el repositorio y antes de trabajar en el proyecto, se debe crear un entorno virtual local que contendrá las dependencias del proyecto.
 
-2. **Aplicar las migraciones a PostgreSQL**  
-   ```bash
-   python manage.py migrate
-   ```
+### Crear un entorno virtual
+
+En la raíz del repositorio clonado, crea un entorno virtual:
+
+```bash
+python -m venv venv
+```
+
+Luego, activa el entorno virtual:
+
+```bash
+venv\Scripts\activate
+```
+
+> El entorno virtual ahora está activo y verás un prefijo `(venv)` en tu terminal.
+
+### Instalar las dependencias
+
+Asegúrate de tener el archivo `requirements.txt` en la raíz del repositorio. Luego, instala las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 3. Configuración de la Base de Datos `bancodb` en PostgreSQL para Windows
+
+### Abrir la Consola de PostgreSQL
+
+Se realizará la configuración inicial de PostgreSQL. Sigue estos pasos:
+
+- Abre la consola de comandos **"SQL Shell (psql)"**
+- Proporciona la siguiente información:
+  - **Server:** `localhost`
+  - **Database:** (Presiona `Enter` para dejar el valor por defecto)
+  - **Port:** (Presiona `Enter` para dejar el valor por defecto)
+  - **Username:** `postgres`
+  - **Password:** Introducir la contraseña configurada previamente.
+
+### Crear la base de datos `bancodb`
+
+```sql
+CREATE DATABASE bancodb;
+```
+
+### Conectar a la base de datos
+
+```sql
+\c bancodb
+```
+
+### Verificar la estructura de las bases de datos
+
+Para confirmar que la base de datos se creó correctamente:
+
+```sql
+\dt
+```
 
 ---
 
-## 🗄️ Verificación de la Base de Datos en SQL Shell de PostgreSQL
+## 4. Configuración del Proyecto en Django
 
-1. **Listar las bases de datos disponibles**  
-   ```sql
-   \list
-   ```
+Una vez creada la base de datos, verifica la configuración en el entorno de Django. Abre el archivo `settings.py` ubicado en la ruta:
 
-2. **Ubicar la base de datos `bancodb` y acceder a ella**  
-   ```sql
-   \c bancodb
-   ```
+```
+bancoSangre/settings.py
+```
 
-3. **Listar las tablas y verificar la existencia de `donadores-donadores`**  
-   ```sql
-   \dt
-   ```
+Configura la base de datos de la siguiente manera:
 
-Si la tabla `donadores-donadores` aparece en la lista, significa que la migración fue exitosa. ✅
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bancodb',
+        'USER': 'postgres',
+        'PASSWORD': '689447',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
 
----
+
+
+Ahora para montar el proyecto deberas ejecutar el comando `python manage.py runserver`, sera como en el ejemplo siguiente: 
+```python
+(venv) PS C:\Users\brian\OneDrive\Documentos\proyectos\GDP\BancoSangre\bancoSangre> python manage.py runserver
+```
 
