@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'donadores',
+    'administradores',
 ]
 
 MIDDLEWARE = [
@@ -79,12 +80,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bancodb',
-        'USER': 'miche',
+        'USER': 'postgres',
         'PASSWORD': '689447',
         'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
 
 
 # Password validation
