@@ -1,0 +1,126 @@
+from django.db import models
+from django.contrib.auth.hashers import make_password
+
+class Rol(models.Model):
+    nombre = models.CharField(max_length=50, unique=True)
+    
+    def __str__(self):
+        return self.nombre
+
+class Usuario(models.Model):
+    nombre_usuario = models.CharField(max_length=30, unique=True)
+    correo = models.EmailField(unique=True)
+    contraseña = models.CharField(max_length=128)  # Hashing de contraseña
+    sexo = models.CharField(max_length=1, choices=[('M', 'Masculino'), ('F', 'Femenino')])
+    rol = models.ForeignKey(Rol, on_delete=models.CASCADE)
+    
+    def save(self, *args, **kwargs):
+        if not self.pk:  # Solo en la creación, no al actualizar
+            self.contraseña = make_password(self.contraseña)
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.nombre_usuario
+
+class Donador(models.Model):
+    nombre = models.CharField(max_length=50)
+    edad = models.PositiveIntegerField()
+    primera_donacion = models.DateField(null=True, blank=True)
+    ultima_donacion = models.DateField(null=True, blank=True)
+    tipo_sangre = models.CharField(max_length=5)
+    peso = models.DecimalField(max_digits=5, decimal_places=2)
+    estado = models.BooleanField(default=True)
+    telefono_uno = models.CharField(max_length=10)
+    telefono_dos = models.CharField(max_length=10, blank=True, null=True)
+    direccion = models.ForeignKey('Direccion', on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.nombre
+
+class UsuarioDonador(models.Model):
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
+    donador = models.OneToOneField(Donador, on_delete=models.CASCADE)
+
+class Direccion(models.Model):
+    num_interior = models.CharField(max_length=10, blank=True, null=True)
+    num_exterior = models.CharField(max_length=10)
+    colonia = models.ForeignKey('Colonia', on_delete=models.CASCADE)
+    coordenadas = models.ForeignKey('Coordenadas', on_delete=models.SET_NULL, null=True)
+
+class Colonia(models.Model):
+    nombre = models.CharField(max_length=100)
+    municipio = models.ForeignKey('Municipio', on_delete=models.CASCADE)
+
+class Municipio(models.Model):
+    nombre = models.CharField(max_length=100)
+
+class Coordenadas(models.Model):
+    latitud = models.CharField(max_length=50)
+    longitud = models.CharField(max_length=50)
+
+class Enfermedad(models.Model):
+    nombre = models.CharField(max_length=100)
+    afecta_donacion = models.BooleanField(default=False)
+
+class Analisis(models.Model):
+    fecha = models.DateField()
+    presion_arterial = models.CharField(max_length=50)
+    peso = models.DecimalField(max_digits=5, decimal_places=2)
+    altura = models.DecimalField(max_digits=5, decimal_places=2)
+    aprobado = models.BooleanField(default=False)
+    donador = models.ForeignKey(Donador, on_delete=models.CASCADE)
+    enfermedad = models.ForeignKey(Enfermedad, on_delete=models.SET_NULL, null=True)
+
+class Donacion(models.Model):
+    fecha_donacion = models.DateField()
+    cantidad_donada = models.DecimalField(max_digits=5, decimal_places=2)
+    donador = models.ForeignKey(Donador, on_delete=models.CASCADE)
+    tipo_donacion = models.ForeignKey('TipoDonacion', on_delete=models.CASCADE)
+
+class TipoDonacion(models.Model):
+    categoria = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.categoria
+
+
+
+---------------------------------------------------------------------------------------------------------------
+Orden recomendado para migrar por módulos
+
+Siguiendo tu diagrama, puedes hacer lo siguiente:
+
+✅ 1. Modulo de Rol y Usuario
+
+python manage.py makemigrations
+python manage.py migrate
+
+    Se migran primero porque Usuario tiene una clave foránea a Rol, pero no depende de otros módulos.
+
+✅ 2. Módulo de Donador y UsuarioDonador
+
+python manage.py makemigrations donador
+python manage.py migrate donador
+
+    Donador no depende de otras tablas, pero UsuarioDonador sí depende de Usuario y Donador, así que Usuario debe existir antes.
+
+✅ 3. Módulo de Dirección, Colonia, Municipio, Coordenadas
+
+python manage.py makemigrations direccion
+python manage.py migrate direccion
+
+    Direccion depende de Colonia, que depende de Municipio, y puede tener Coordenadas.
+
+✅ 4. Módulo de Enfermedades, Análisis, Aprobación
+
+python manage.py makemigrations analisis
+python manage.py migrate analisis
+
+    Analisis tiene relación con Enfermedades, así que asegúrate de que estas tablas se migren juntas.
+
+✅ 5. Módulo de Donación y TipoDonación
+
+python manage.py makemigrations donacion
+python manage.py migrate donacion
+
+    Donacion depende de Donador y TipoDonacion, así que estos deben existir antes.
