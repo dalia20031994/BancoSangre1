@@ -216,5 +216,4 @@ O presionando `Ctrl + D` en Linux/Mac o `Ctrl + Z` y luego `Enter` en Windows.
 
 ---
 
-Este manual te guiará en la instalación y configuración del proyecto **BancoSangre** en cualquier equipo desde cero. 🚀
-
+Manual de equipo 3 - @miche
