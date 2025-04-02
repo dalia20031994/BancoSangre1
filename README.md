@@ -139,4 +139,6 @@ Ahora para montar el proyecto deberas ejecutar el comando `python manage.py runs
 ```python
 (venv) PS C:\Users\brian\OneDrive\Documentos\proyectos\GDP\BancoSangre\bancoSangre> python manage.py runserver
 ```
+![image](https://github.com/user-attachments/assets/3f0ebc98-1108-490a-8d23-2395598d95d6)
+
 
