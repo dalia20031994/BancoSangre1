@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'usuario',
     'rol',
+    'municipio',
+    'colonia',
+    'coordenada',
+    'direccion',
+    'donador',
 ]
 
 MIDDLEWARE = [
