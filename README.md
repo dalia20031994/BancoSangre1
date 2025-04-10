@@ -46,20 +46,22 @@ git fetch
 
 ## 2. Creación del Entorno Virtual
 
-Después de clonar el repositorio y antes de trabajar en el proyecto, se debe crear un entorno virtual local que contendrá las dependencias del proyecto.
+### En Windows
 
-### Crear un entorno virtual
-
-En la raíz del repositorio clonado, crea un entorno virtual:
+Ejecuta en la terminal:
 
 ```bash
 python -m venv venv
+venv\Scripts\activate
 ```
 
-Luego, activa el entorno virtual:
+### En Ubuntu / Linux
+
+Ejecuta en la terminal:
 
 ```bash
-venv\Scripts\activate
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 > El entorno virtual ahora está activo y verás un prefijo `(venv)` en tu terminal.
@@ -74,11 +76,19 @@ pip install -r requirements.txt
 
 ---
 
-## 3. Configuración de la Base de Datos `bancodb` en PostgreSQL para Windows
+## 3. Instalación de PostgreSQL y `psycopg2`
+
+Para conectar Django con PostgreSQL, primero instala `psycopg2`:
+
+```bash
+pip install psycopg2
+```
+
+---
+
+## 4. Configuración de la Base de Datos `bancodb` en PostgreSQL
 
 ### Abrir la Consola de PostgreSQL
-
-Se realizará la configuración inicial de PostgreSQL. Sigue estos pasos:
 
 - Abre la consola de comandos **"SQL Shell (psql)"**
 - Proporciona la siguiente información:
@@ -110,9 +120,9 @@ Para confirmar que la base de datos se creó correctamente:
 
 ---
 
-## 4. Configuración del Proyecto en Django
+## 5. Configuración del Proyecto en Django
 
-Una vez creada la base de datos, verifica la configuración en el entorno de Django. Abre el archivo `settings.py` ubicado en la ruta:
+Abre el archivo `settings.py` ubicado en la ruta:
 
 ```
 bancoSangre/settings.py
@@ -133,12 +143,77 @@ DATABASES = {
 }
 ```
 
+---
 
+## 6. Aplicar Migraciones y Crear Roles por Defecto
 
-Ahora para montar el proyecto deberas ejecutar el comando `python manage.py runserver`, sera como en el ejemplo siguiente: 
+### Crear y aplicar migraciones
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### Crear los roles predeterminados
+
+Ejecuta el **shell de Django**:
+
+```bash
+python manage.py shell
+```
+
+Luego, dentro del shell interactivo de Python, escribe:
+
 ```python
+from rol.models import Rol
+Rol.objects.get_or_create(nombre="Administrador")
+Rol.objects.get_or_create(nombre="Donador")
+exit()
+```
+
+---
+
+## 7. Ejecutar el Proyecto
+
+Ejecuta el siguiente comando para iniciar el servidor de desarrollo de Django:
+
+```bash
+python manage.py runserver
+```
+
+Ejemplo en Windows PowerShell:
+
+```powershell
 (venv) PS C:\Users\brian\OneDrive\Documentos\proyectos\GDP\BancoSangre\bancoSangre> python manage.py runserver
 ```
-![image](https://github.com/user-attachments/assets/3f0ebc98-1108-490a-8d23-2395598d95d6)
 
+Esto iniciará el servidor en `http://127.0.0.1:8000/`.
 
+---
+
+## 8. Pruebas Finales
+
+Para verificar que todo esté funcionando correctamente, puedes acceder a la API de usuarios si está configurada, probando la siguiente URL en tu navegador o en Postman:
+
+```
+http://127.0.0.1:8000/api/usuarios/
+```
+
+Si todo está bien, deberías ver los usuarios junto con su rol asignado.
+
+---
+
+## 9. Comandos útiles
+
+### Salir del shell de Django
+
+Si estás dentro del `python manage.py shell`, puedes salir con:
+
+```python
+exit()
+```
+O presionando `Ctrl + D` en Linux/Mac o `Ctrl + Z` y luego `Enter` en Windows.
+
+---
+
+Manual de equipo 3 - @miche

@@ -20,5 +20,11 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('usuario.api.urls')),
+    path('api/',include('municipio.api.urls')),
+    path('api/',include('colonia.api.urls')),
+    path('api/',include('coordenada.api.urls')),
+    path('api/',include('direccion.api.urls')),
+    path('api/',include('donador.api.urls')),
     # path('api/',include('administradores.api.urls')),
 ]
+

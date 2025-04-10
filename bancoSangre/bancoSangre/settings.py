@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'usuario',
     'rol',
     'corsheaders',# lo agrege para las solicitudes del fron
+    'municipio',
+    'colonia',
+    'coordenada',
+    'direccion',
+    'donador',
 ]
 
 MIDDLEWARE = [
