@@ -1,11 +1,17 @@
-import './index.css' // Esta línea debe estar al inicio
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import './index.css'
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+import React from 'react';
+/* Para renderizar en el navegador  */
+import ReactDOM from 'react-dom/client';
+/* importar el componente principal */
+import App from './App';
+/* en ese archivo esta el estilo de tailwis */
+import './index.css'; 
+/* permite habilitar la navegación por rutas */
+import { BrowserRouter } from 'react-router-dom';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);

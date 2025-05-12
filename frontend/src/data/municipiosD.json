@@ -1,0 +1,2842 @@
+[
+  {
+    "label": "San Miguel Tlacotepec",
+    "lat": 17.443724999999997,
+    "lng": -98.01184446666666
+  },
+  {
+    "label": "San Carlos Yautepec",
+    "lat": 16.484810630136984,
+    "lng": -95.94647504109585
+  },
+  {
+    "label": "San Dionisio del Mar",
+    "lat": 16.32775342857143,
+    "lng": -94.75133128571429
+  },
+  {
+    "label": "Soledad Etla",
+    "lat": 17.163970142857142,
+    "lng": -96.82099400000001
+  },
+  {
+    "label": "San Juan Evangelista Analco",
+    "lat": 17.404797,
+    "lng": -96.53368525000002
+  },
+  {
+    "label": "San Juan Cieneguilla",
+    "lat": 17.848617500000003,
+    "lng": -98.264542
+  },
+  {
+    "label": "San Martín Lachilá",
+    "lat": 16.610327666666667,
+    "lng": -96.84610166666666
+  },
+  {
+    "label": "Santa Catarina Ixtepeji",
+    "lat": 17.210807206896554,
+    "lng": -96.57890100000003
+  },
+  {
+    "label": "San Pedro Mártir Quiechapa",
+    "lat": 16.415227,
+    "lng": -96.247539
+  },
+  {
+    "label": "San Miguel Huautla",
+    "lat": 17.74407283333333,
+    "lng": -97.15049658333334
+  },
+  {
+    "label": "San Miguel Peras",
+    "lat": 16.931132636363635,
+    "lng": -97.00833781818181
+  },
+  {
+    "label": "San Vicente Nuñú",
+    "lat": 17.441132,
+    "lng": -97.44314666666666
+  },
+  {
+    "label": "Tataltepec de Valdés",
+    "lat": 16.3235163,
+    "lng": -97.55852989999998
+  },
+  {
+    "label": "Constancia del Rosario",
+    "lat": 17.059782285714288,
+    "lng": -97.99514264285715
+  },
+  {
+    "label": "San José Independencia",
+    "lat": 18.243566272727268,
+    "lng": -96.64621627272727
+  },
+  {
+    "label": "San Pedro Coxcaltepec Cántaros",
+    "lat": 17.517041499999998,
+    "lng": -97.11421620000002
+  },
+  {
+    "label": "Santos Reyes Pápalo",
+    "lat": 17.796998333333335,
+    "lng": -96.87411566666667
+  },
+  {
+    "label": "Santiago Ihuitlán Plumas",
+    "lat": 17.87514125,
+    "lng": -97.448406
+  },
+  {
+    "label": "San Pedro Atoyac",
+    "lat": 16.506889307692308,
+    "lng": -97.97531507692308
+  },
+  {
+    "label": "Tlalixtac de Cabrera",
+    "lat": 17.06691794117647,
+    "lng": -96.646072
+  },
+  {
+    "label": "San Pedro Comitancillo",
+    "lat": 16.475565666666665,
+    "lng": -95.14625366666667
+  },
+  {
+    "label": "Santos Reyes Tepejillo",
+    "lat": 17.438094375,
+    "lng": -97.93518237500001
+  },
+  {
+    "label": "San Sebastián Teitipac",
+    "lat": 16.949179375,
+    "lng": -96.621327625
+  },
+  {
+    "label": "Heroica Ciudad de Juchitán de Zaragoza",
+    "lat": 16.447207052325584,
+    "lng": -94.98965656395349
+  },
+  {
+    "label": "Zimatlán de Álvarez",
+    "lat": 16.809047027397266,
+    "lng": -96.99356545205482
+  },
+  {
+    "label": "Villa de Tamazulápam del Progreso",
+    "lat": 17.692764304347833,
+    "lng": -97.57351317391304
+  },
+  {
+    "label": "Magdalena Peñasco",
+    "lat": 17.238477772727276,
+    "lng": -97.56064759090908
+  },
+  {
+    "label": "San Pedro Mixtepec",
+    "lat": 15.96100562337662,
+    "lng": -97.01512385714288
+  },
+  {
+    "label": "San Juan Juquila Mixes",
+    "lat": 16.908227892857145,
+    "lng": -95.89251257142857
+  },
+  {
+    "label": "San Miguel Tenango",
+    "lat": 16.23895326086956,
+    "lng": -95.55930152173914
+  },
+  {
+    "label": "Calihualá",
+    "lat": 17.5407646,
+    "lng": -98.2672984
+  },
+  {
+    "label": "San Lucas Zoquiápam",
+    "lat": 18.120007322580644,
+    "lng": -96.90708400000001
+  },
+  {
+    "label": "Santa Ana Tavela",
+    "lat": 16.6630665,
+    "lng": -95.91106500000001
+  },
+  {
+    "label": "Yaxe",
+    "lat": 16.726907999999998,
+    "lng": -96.472536
+  },
+  {
+    "label": "San Mateo Río Hondo",
+    "lat": 16.127280023809526,
+    "lng": -96.5108932857143
+  },
+  {
+    "label": "Fresnillo de Trujano",
+    "lat": 17.925875166666668,
+    "lng": -98.13243033333333
+  },
+  {
+    "label": "San Mateo Peñasco",
+    "lat": 17.1501875,
+    "lng": -97.51839166666666
+  },
+  {
+    "label": "Santa María Atzompa",
+    "lat": 17.098845696969697,
+    "lng": -96.78479836363638
+  },
+  {
+    "label": "Cosolapa",
+    "lat": 18.584281972972974,
+    "lng": -96.66304929729732
+  },
+  {
+    "label": "San Francisco Chapulapa",
+    "lat": 17.925742285714286,
+    "lng": -96.7500195
+  },
+  {
+    "label": "San Simón Almolongas",
+    "lat": 16.416553444444446,
+    "lng": -96.7114221111111
+  },
+  {
+    "label": "San José Estancia Grande",
+    "lat": 16.36655357142857,
+    "lng": -98.25384457142857
+  },
+  {
+    "label": "Santo Domingo Xagacía",
+    "lat": 17.153120666666666,
+    "lng": -96.25905666666667
+  },
+  {
+    "label": "Cosoltepec",
+    "lat": 18.140274733333335,
+    "lng": -97.80989386666667
+  },
+  {
+    "label": "San Miguel Chicahua",
+    "lat": 17.628679205882346,
+    "lng": -97.19578529411763
+  },
+  {
+    "label": "Santa Catarina Quiané",
+    "lat": 16.8849805,
+    "lng": -96.7386025
+  },
+  {
+    "label": "Magdalena Apasco",
+    "lat": 17.237260833333334,
+    "lng": -96.82306425000002
+  },
+  {
+    "label": "Tamazulápam del Espíritu Santo",
+    "lat": 17.039479727272727,
+    "lng": -96.03705384848483
+  },
+  {
+    "label": "Santa María Guienagati",
+    "lat": 16.75189675555556,
+    "lng": -95.36344408888888
+  },
+  {
+    "label": "Santiago Lachiguiri",
+    "lat": 16.763903358208953,
+    "lng": -95.52692720895523
+  },
+  {
+    "label": "Santa Lucía Monteverde",
+    "lat": 16.949282103448272,
+    "lng": -97.71263720689655
+  },
+  {
+    "label": "San Pedro Teutila",
+    "lat": 17.958129210526316,
+    "lng": -96.66572268421054
+  },
+  {
+    "label": "Guadalupe de Ramírez",
+    "lat": 17.756176999999997,
+    "lng": -98.18918566666667
+  },
+  {
+    "label": "San Mateo Cajonos",
+    "lat": 17.160383500000002,
+    "lng": -96.20546
+  },
+  {
+    "label": "Santa Cruz Tacahua",
+    "lat": 16.92028709090909,
+    "lng": -97.48193109090909
+  },
+  {
+    "label": "La Trinidad Vista Hermosa",
+    "lat": 17.770980200000004,
+    "lng": -97.50177740000001
+  },
+  {
+    "label": "San Sebastián Tutla",
+    "lat": 17.048121142857145,
+    "lng": -96.68087114285713
+  },
+  {
+    "label": "Santa María Teopoxco",
+    "lat": 18.177153275862068,
+    "lng": -96.9665754137931
+  },
+  {
+    "label": "Asunción Ixtaltepec",
+    "lat": 16.54795520224719,
+    "lng": -95.03090998876402
+  },
+  {
+    "label": "San Sebastián Abasolo",
+    "lat": 16.9864905,
+    "lng": -96.59094749999998
+  },
+  {
+    "label": "Santo Domingo Albarradas",
+    "lat": 17.0700252,
+    "lng": -96.1950244
+  },
+  {
+    "label": "San Blas Atempa",
+    "lat": 16.345866423076924,
+    "lng": -95.16608703846154
+  },
+  {
+    "label": "Santa Catarina Minas",
+    "lat": 16.7773488,
+    "lng": -96.62551959999999
+  },
+  {
+    "label": "Santa Inés del Monte",
+    "lat": 16.923546599999998,
+    "lng": -96.85739573333333
+  },
+  {
+    "label": "Santo Tomás Tamazulapan",
+    "lat": 16.237699,
+    "lng": -96.56701775
+  },
+  {
+    "label": "San Andrés Huaxpaltepec",
+    "lat": 16.334602285714286,
+    "lng": -97.90845628571431
+  },
+  {
+    "label": "San Juan Bautista Jayacatlán",
+    "lat": 17.425662000000003,
+    "lng": -96.8272125
+  },
+  {
+    "label": "San Jerónimo Coatlán",
+    "lat": 16.179661431818182,
+    "lng": -96.98202220454546
+  },
+  {
+    "label": "San Andrés Huayápam",
+    "lat": 17.09978322222222,
+    "lng": -96.6689513888889
+  },
+  {
+    "label": "Santo Domingo Tomaltepec",
+    "lat": 17.05376666666667,
+    "lng": -96.62238111111111
+  },
+  {
+    "label": "San Lucas Ojitlán",
+    "lat": 18.041821344262292,
+    "lng": -96.38400031147536
+  },
+  {
+    "label": "San Miguel Amatlán",
+    "lat": 17.23219211764706,
+    "lng": -96.4554838235294
+  },
+  {
+    "label": "Santiago Texcalcingo",
+    "lat": 18.214567444444448,
+    "lng": -96.97368211111112
+  },
+  {
+    "label": "San Francisco Lachigoló",
+    "lat": 17.025212444444442,
+    "lng": -96.59966911111113
+  },
+  {
+    "label": "San Juan Petlapa",
+    "lat": 17.50703,
+    "lng": -96.03631983333332
+  },
+  {
+    "label": "Ciénega de Zimatlán",
+    "lat": 16.893560833333336,
+    "lng": -96.7687105
+  },
+  {
+    "label": "San Juan Yatzona",
+    "lat": 17.402024333333333,
+    "lng": -96.170419
+  },
+  {
+    "label": "Teotongo",
+    "lat": 17.739838181818183,
+    "lng": -97.543279
+  },
+  {
+    "label": "San Juan Mixtepec",
+    "lat": 17.30192848571428,
+    "lng": -97.84118537142858
+  },
+  {
+    "label": "San Pedro el Alto",
+    "lat": 16.01122148275862,
+    "lng": -96.47588675862067
+  },
+  {
+    "label": "San Juan Coatzóspam",
+    "lat": 18.04574425,
+    "lng": -96.75296374999999
+  },
+  {
+    "label": "Santiago Xanica",
+    "lat": 16.00536824489796,
+    "lng": -96.24763791836733
+  },
+  {
+    "label": "Tlacolula de Matamoros",
+    "lat": 16.95697927272727,
+    "lng": -96.47169709090913
+  },
+  {
+    "label": "San Lucas Quiaviní",
+    "lat": 16.894802,
+    "lng": -96.468094
+  },
+  {
+    "label": "San Pedro Molinos",
+    "lat": 17.100953875,
+    "lng": -97.551187625
+  },
+  {
+    "label": "San Ildefonso Villa Alta",
+    "lat": 17.362474600000002,
+    "lng": -96.14711820000001
+  },
+  {
+    "label": "Santiago Xiacuí",
+    "lat": 17.2748212,
+    "lng": -96.42408899999998
+  },
+  {
+    "label": "Santa María Ecatepec",
+    "lat": 16.31396733333333,
+    "lng": -95.8532948095238
+  },
+  {
+    "label": "San Bartolo Coyotepec",
+    "lat": 16.936695076923076,
+    "lng": -96.71279130769231
+  },
+  {
+    "label": "Santa María Cortijo",
+    "lat": 16.426073999999996,
+    "lng": -98.31936825000001
+  },
+  {
+    "label": "Santiago Yaveo",
+    "lat": 17.54786795238096,
+    "lng": -95.42368506060603
+  },
+  {
+    "label": "Santiago Tillo",
+    "lat": 17.46491290909091,
+    "lng": -97.31999572727273
+  },
+  {
+    "label": "Santiago Camotlán",
+    "lat": 17.550760636363638,
+    "lng": -96.17171745454547
+  },
+  {
+    "label": "San Andrés Nuxiño",
+    "lat": 17.234527333333336,
+    "lng": -97.06879720000002
+  },
+  {
+    "label": "San Sebastián Ixcapa",
+    "lat": 16.519492800000002,
+    "lng": -98.14288239999999
+  },
+  {
+    "label": "Cuyamecalco Villa de Zaragoza",
+    "lat": 17.966069222222224,
+    "lng": -96.83826872222221
+  },
+  {
+    "label": "San Francisco Tlapancingo",
+    "lat": 17.478998285714287,
+    "lng": -98.28297442857145
+  },
+  {
+    "label": "Santiago Tilantongo",
+    "lat": 17.24801454166667,
+    "lng": -97.34337162499999
+  },
+  {
+    "label": "Santa María Huazolotitlán",
+    "lat": 16.230103,
+    "lng": -97.9378624736842
+  },
+  {
+    "label": "Asunción Cuyotepeji",
+    "lat": 17.92451783333333,
+    "lng": -97.67905166666667
+  },
+  {
+    "label": "Santiago Cacaloxtepec",
+    "lat": 17.73408733333333,
+    "lng": -97.740863
+  },
+  {
+    "label": "San Pablo Huitzo",
+    "lat": 17.299032099999998,
+    "lng": -96.8798918
+  },
+  {
+    "label": "Santiago del Río",
+    "lat": 17.448849666666664,
+    "lng": -98.09177116666666
+  },
+  {
+    "label": "San Miguel Tlacamama",
+    "lat": 16.4307635,
+    "lng": -98.09139483333334
+  },
+  {
+    "label": "Santo Domingo Tonaltepec",
+    "lat": 17.604621375,
+    "lng": -97.355428125
+  },
+  {
+    "label": "San Antonio Nanahuatípam",
+    "lat": 18.140525500000003,
+    "lng": -97.13037349999999
+  },
+  {
+    "label": "Santa María Xadani",
+    "lat": 16.38195765714286,
+    "lng": -95.02730248571426
+  },
+  {
+    "label": "San Felipe Tejalápam",
+    "lat": 17.096818000000006,
+    "lng": -96.8645361515152
+  },
+  {
+    "label": "Santa Cruz Mixtepec",
+    "lat": 16.788548187499998,
+    "lng": -96.88401193750002
+  },
+  {
+    "label": "Trinidad Zaachila",
+    "lat": 16.92254325,
+    "lng": -96.77476300000001
+  },
+  {
+    "label": "San Martín Zacatepec",
+    "lat": 17.816470428571428,
+    "lng": -98.07331914285714
+  },
+  {
+    "label": "San Juan Chicomezúchil",
+    "lat": 17.296797555555557,
+    "lng": -96.50643488888889
+  },
+  {
+    "label": "San Sebastián Nicananduta",
+    "lat": 17.517672333333334,
+    "lng": -97.68296766666667
+  },
+  {
+    "label": "Santos Reyes Yucuná",
+    "lat": 17.7754594,
+    "lng": -98.00098719999998
+  },
+  {
+    "label": "Santiago Tetepec",
+    "lat": 16.349411437500002,
+    "lng": -97.68934199999998
+  },
+  {
+    "label": "San Pedro Pochutla",
+    "lat": 15.788793248366007,
+    "lng": -96.43062562091505
+  },
+  {
+    "label": "San Sebastián Tecomaxtlahuaca",
+    "lat": 17.355594406779662,
+    "lng": -98.08055001694915
+  },
+  {
+    "label": "San José Lachiguiri",
+    "lat": 16.411536888888893,
+    "lng": -96.33945822222223
+  },
+  {
+    "label": "Santa María Camotlán",
+    "lat": 17.882000700000003,
+    "lng": -97.6854356
+  },
+  {
+    "label": "La Pe",
+    "lat": 16.617977500000002,
+    "lng": -96.789432
+  },
+  {
+    "label": "San Juan de los Cués",
+    "lat": 18.059735888888888,
+    "lng": -97.01714744444445
+  },
+  {
+    "label": "San Lorenzo Albarradas",
+    "lat": 16.912822523809524,
+    "lng": -96.25291485714288
+  },
+  {
+    "label": "Heroica Ciudad de Huajuapan de León",
+    "lat": 17.822991327868856,
+    "lng": -97.78635481967211
+  },
+  {
+    "label": "Magdalena Teitipac",
+    "lat": 16.90306166666667,
+    "lng": -96.56209133333333
+  },
+  {
+    "label": "San Juan Ozolotepec",
+    "lat": 16.0969632,
+    "lng": -96.21109326666665
+  },
+  {
+    "label": "Santo Domingo Yanhuitlán",
+    "lat": 17.5328381,
+    "lng": -97.35330950000001
+  },
+  {
+    "label": "San Baltazar Yatzachi el Bajo",
+    "lat": 17.2313216,
+    "lng": -96.21921979999999
+  },
+  {
+    "label": "San Jerónimo Silacayoapilla",
+    "lat": 17.812843,
+    "lng": -97.84830966666668
+  },
+  {
+    "label": "Santa María Chilchotla",
+    "lat": 18.27578140163934,
+    "lng": -96.77800631967214
+  },
+  {
+    "label": "Santa María Huatulco",
+    "lat": 15.80411114130435,
+    "lng": -96.22527618478262
+  },
+  {
+    "label": "Silacayoápam",
+    "lat": 17.528479793103443,
+    "lng": -98.1334391724138
+  },
+  {
+    "label": "San Agustín Yatareni",
+    "lat": 17.085730714285713,
+    "lng": -96.67817500000001
+  },
+  {
+    "label": "Santa Catarina Cuixtla",
+    "lat": 16.305418,
+    "lng": -96.644533625
+  },
+  {
+    "label": "Santa Gertrudis",
+    "lat": 16.784856714285716,
+    "lng": -96.80197114285716
+  },
+  {
+    "label": "San Juan Lalana",
+    "lat": 17.53198613559322,
+    "lng": -95.80915835593217
+  },
+  {
+    "label": "Santa María del Rosario",
+    "lat": 17.349195,
+    "lng": -97.60241354545452
+  },
+  {
+    "label": "Tanetze de Zaragoza",
+    "lat": 17.385938333333332,
+    "lng": -96.29853266666667
+  },
+  {
+    "label": "Mártires de Tacubaya",
+    "lat": 16.5462135,
+    "lng": -98.24266825000001
+  },
+  {
+    "label": "San Pablo Macuiltianguis",
+    "lat": 17.52910042857143,
+    "lng": -96.5407825714286
+  },
+  {
+    "label": "Asunción Tlacolulita",
+    "lat": 16.242918500000002,
+    "lng": -95.7497885
+  },
+  {
+    "label": "Santiago Tlazoyaltepec",
+    "lat": 17.028129783333334,
+    "lng": -96.96875321666668
+  },
+  {
+    "label": "Santiago Tamazola",
+    "lat": 17.722077,
+    "lng": -98.21278677777778
+  },
+  {
+    "label": "San Marcos Arteaga",
+    "lat": 17.730480090909086,
+    "lng": -97.88584936363637
+  },
+  {
+    "label": "San Juan Guelavía",
+    "lat": 16.954987142857142,
+    "lng": -96.5378297142857
+  },
+  {
+    "label": "Coatecas Altas",
+    "lat": 16.523663470588236,
+    "lng": -96.62255129411766
+  },
+  {
+    "label": "San Juan Yucuita",
+    "lat": 17.5169224,
+    "lng": -97.2685014
+  },
+  {
+    "label": "Santa Cruz Tayata",
+    "lat": 17.373380166666667,
+    "lng": -97.56417
+  },
+  {
+    "label": "Guelatao de Juárez",
+    "lat": 17.313409,
+    "lng": -96.49814620000001
+  },
+  {
+    "label": "San Felipe Jalapa de Díaz",
+    "lat": 18.078538911111114,
+    "lng": -96.52418462222224
+  },
+  {
+    "label": "San Melchor Betaza",
+    "lat": 17.256825666666668,
+    "lng": -96.14974033333334
+  },
+  {
+    "label": "San Juan Colorado",
+    "lat": 16.4703685,
+    "lng": -97.91512166666666
+  },
+  {
+    "label": "Ánimas Trujano",
+    "lat": 16.989081199999998,
+    "lng": -96.71515159999998
+  },
+  {
+    "label": "San Lorenzo Texmelúcan",
+    "lat": 16.532604851851847,
+    "lng": -97.18940414814814
+  },
+  {
+    "label": "Santa María Coyotepec",
+    "lat": 16.97152422222222,
+    "lng": -96.70327977777778
+  },
+  {
+    "label": "Santo Tomás Ocotepec",
+    "lat": 17.122241266666666,
+    "lng": -97.77341320000001
+  },
+  {
+    "label": "Santiago Tapextla",
+    "lat": 16.327175749999995,
+    "lng": -98.485710875
+  },
+  {
+    "label": "Teococuilco de Marcos Pérez",
+    "lat": 17.32192618181818,
+    "lng": -96.64649545454546
+  },
+  {
+    "label": "San Cristóbal Lachirioag",
+    "lat": 17.3394145,
+    "lng": -96.162047
+  },
+  {
+    "label": "Santos Reyes Nopala",
+    "lat": 16.093346017543862,
+    "lng": -97.19316236842107
+  },
+  {
+    "label": "Concepción Pápalo",
+    "lat": 17.85423464705882,
+    "lng": -96.84999505882352
+  },
+  {
+    "label": "Magdalena Jaltepec",
+    "lat": 17.29025268,
+    "lng": -97.22770108
+  },
+  {
+    "label": "Santa María Jalapa del Marqués",
+    "lat": 16.490216612903225,
+    "lng": -95.46396096774193
+  },
+  {
+    "label": "San Juan Teposcolula",
+    "lat": 17.58155735294118,
+    "lng": -97.4168942352941
+  },
+  {
+    "label": "San Pablo Yaganiza",
+    "lat": 17.146083,
+    "lng": -96.229575
+  },
+  {
+    "label": "San Pablo Tijaltepec",
+    "lat": 17.025496615384615,
+    "lng": -97.49178707692307
+  },
+  {
+    "label": "San Juan Tepeuxila",
+    "lat": 17.7586284,
+    "lng": -96.7556306
+  },
+  {
+    "label": "Ixtlán de Juárez",
+    "lat": 17.4215842,
+    "lng": -96.37751815
+  },
+  {
+    "label": "San Pedro y San Pablo Ayutla",
+    "lat": 17.02748342307692,
+    "lng": -96.1354885
+  },
+  {
+    "label": "San Nicolás Hidalgo",
+    "lat": 17.781791000000002,
+    "lng": -98.16223925
+  },
+  {
+    "label": "Capulálpam de Méndez",
+    "lat": 17.310663166666668,
+    "lng": -96.44733733333332
+  },
+  {
+    "label": "San Francisco Ixhuatán",
+    "lat": 16.31314428571429,
+    "lng": -94.47746089285712
+  },
+  {
+    "label": "San Juan Bautista Tuxtepec",
+    "lat": 18.04191591967873,
+    "lng": -96.08807748594374
+  },
+  {
+    "label": "Magdalena Zahuatlán",
+    "lat": 17.390680999999997,
+    "lng": -97.2277145
+  },
+  {
+    "label": "San Pedro Jaltepetongo",
+    "lat": 17.6869932,
+    "lng": -97.0372578
+  },
+  {
+    "label": "San Mateo Etlatongo",
+    "lat": 17.41918188888889,
+    "lng": -97.26295022222223
+  },
+  {
+    "label": "San Miguel Ahuehuetitlán",
+    "lat": 17.658219,
+    "lng": -98.33987266666668
+  },
+  {
+    "label": "San Lorenzo Cacaotepec",
+    "lat": 17.134877727272723,
+    "lng": -96.79917854545455
+  },
+  {
+    "label": "San Pablo Huixtepec",
+    "lat": 16.817576866666666,
+    "lng": -96.79579066666666
+  },
+  {
+    "label": "San Pedro Jicayán",
+    "lat": 16.46507268965517,
+    "lng": -98.04438737931032
+  },
+  {
+    "label": "San Juan Bautista Coixtlahuaca",
+    "lat": 17.727699088235294,
+    "lng": -97.27210379411765
+  },
+  {
+    "label": "Santiago Nundiche",
+    "lat": 17.343985,
+    "lng": -97.66992512499999
+  },
+  {
+    "label": "Santa María Totolapilla",
+    "lat": 16.603228,
+    "lng": -95.625455
+  },
+  {
+    "label": "San Pedro Yaneri",
+    "lat": 17.409692666666665,
+    "lng": -96.36427400000001
+  },
+  {
+    "label": "Mesones Hidalgo",
+    "lat": 16.921987419354835,
+    "lng": -97.99506290322583
+  },
+  {
+    "label": "San Pedro Topiltepec",
+    "lat": 17.444758500000002,
+    "lng": -97.347133
+  },
+  {
+    "label": "Unión Hidalgo",
+    "lat": 16.494539960000004,
+    "lng": -94.84657231999999
+  },
+  {
+    "label": "San Mateo Nejápam",
+    "lat": 17.647231,
+    "lng": -98.40631466666666
+  },
+  {
+    "label": "Santa María del Tule",
+    "lat": 17.03753,
+    "lng": -96.622126
+  },
+  {
+    "label": "Asunción Cacalotepec",
+    "lat": 17.03570807692308,
+    "lng": -95.93337330769234
+  },
+  {
+    "label": "Santa Cruz Acatepec",
+    "lat": 18.1596555,
+    "lng": -96.882311
+  },
+  {
+    "label": "Santiago Atitlán",
+    "lat": 17.083123761904762,
+    "lng": -95.92074790476192
+  },
+  {
+    "label": "Santiago Suchilquitongo",
+    "lat": 17.24853042857143,
+    "lng": -96.86709407142857
+  },
+  {
+    "label": "Santiago Huajolotitlán",
+    "lat": 17.818275947368427,
+    "lng": -97.70954773684211
+  },
+  {
+    "label": "San Vicente Coatlán",
+    "lat": 16.378853272727273,
+    "lng": -96.84749063636364
+  },
+  {
+    "label": "San Andrés Paxtlán",
+    "lat": 16.20859221052632,
+    "lng": -96.52790073684208
+  },
+  {
+    "label": "San Francisco del Mar",
+    "lat": 16.193585301369858,
+    "lng": -94.38130991780827
+  },
+  {
+    "label": "San José Ayuquila",
+    "lat": 17.942977833333334,
+    "lng": -97.9676635
+  },
+  {
+    "label": "Santo Domingo Tlatayápam",
+    "lat": 17.405805666666666,
+    "lng": -97.34743966666666
+  },
+  {
+    "label": "San Andrés Tepetlapa",
+    "lat": 17.6624375,
+    "lng": -98.38858250000001
+  },
+  {
+    "label": "San Juan Lachigalla",
+    "lat": 16.5563441,
+    "lng": -96.5385209
+  },
+  {
+    "label": "San Nicolás",
+    "lat": 16.441433333333336,
+    "lng": -96.72851000000001
+  },
+  {
+    "label": "Santo Tomás Jalieza",
+    "lat": 16.854927714285715,
+    "lng": -96.65938757142855
+  },
+  {
+    "label": "San Bartolo Soyaltepec",
+    "lat": 17.5856184,
+    "lng": -97.30719113333335
+  },
+  {
+    "label": "San Juan Bautista Guelache",
+    "lat": 17.219472,
+    "lng": -96.78573755555556
+  },
+  {
+    "label": "San Pedro Tidaá",
+    "lat": 17.337553,
+    "lng": -97.37946275
+  },
+  {
+    "label": "San Agustín Loxicha",
+    "lat": 15.974200933333332,
+    "lng": -96.62012818666668
+  },
+  {
+    "label": "San Juan Cotzocón",
+    "lat": 17.437679522292985,
+    "lng": -95.32892108280258
+  },
+  {
+    "label": "San Miguel Coatlán",
+    "lat": 16.160533461538463,
+    "lng": -96.68839543589745
+  },
+  {
+    "label": "Santa Lucía del Camino",
+    "lat": 17.0675065,
+    "lng": -96.68095600000001
+  },
+  {
+    "label": "Ocotlán de Morelos",
+    "lat": 16.781638870967747,
+    "lng": -96.67435132258063
+  },
+  {
+    "label": "Teotitlán de Flores Magón",
+    "lat": 18.142354642857143,
+    "lng": -97.05770921428571
+  },
+  {
+    "label": "Ayotzintepec",
+    "lat": 17.71814842857143,
+    "lng": -96.14273357142858
+  },
+  {
+    "label": "Rojas de Cuauhtémoc",
+    "lat": 17.00974,
+    "lng": -96.620563
+  },
+  {
+    "label": "San Luis Amatlán",
+    "lat": 16.453953700000003,
+    "lng": -96.48637866666668
+  },
+  {
+    "label": "Santa Magdalena Jicotlán",
+    "lat": 17.8080975,
+    "lng": -97.473035
+  },
+  {
+    "label": "San Antonio Huitepec",
+    "lat": 16.92174648387097,
+    "lng": -97.13526969354835
+  },
+  {
+    "label": "San Miguel el Grande",
+    "lat": 17.064237352941173,
+    "lng": -97.61578917647057
+  },
+  {
+    "label": "San Pedro Taviche",
+    "lat": 16.649617285714285,
+    "lng": -96.53314557142856
+  },
+  {
+    "label": "Santa María Tepantlali",
+    "lat": 16.97946611111111,
+    "lng": -95.98500566666668
+  },
+  {
+    "label": "Santa María Tlahuitoltepec",
+    "lat": 17.099839199999998,
+    "lng": -96.07183525714287
+  },
+  {
+    "label": "San Jerónimo Sosola",
+    "lat": 17.389077970588236,
+    "lng": -97.04548117647059
+  },
+  {
+    "label": "Santa Cruz Amilpas",
+    "lat": 17.0587,
+    "lng": -96.684017
+  },
+  {
+    "label": "San Francisco Teopan",
+    "lat": 17.854265714285713,
+    "lng": -97.509486
+  },
+  {
+    "label": "Santa Cruz Zenzontepec",
+    "lat": 16.498544115942035,
+    "lng": -97.4819421449275
+  },
+  {
+    "label": "Cuilápam de Guerrero",
+    "lat": 17.003183592592595,
+    "lng": -96.78246151851852
+  },
+  {
+    "label": "San Juan Mazatlán",
+    "lat": 17.206211702127664,
+    "lng": -95.31164559574465
+  },
+  {
+    "label": "Santa Ana",
+    "lat": 16.340638,
+    "lng": -96.71761
+  },
+  {
+    "label": "Magdalena Tequisistlán",
+    "lat": 16.40626190909091,
+    "lng": -95.61681090909092
+  },
+  {
+    "label": "San Pedro Cajonos",
+    "lat": 17.1672065,
+    "lng": -96.260039
+  },
+  {
+    "label": "Chahuites",
+    "lat": 16.272821,
+    "lng": -94.1990448
+  },
+  {
+    "label": "San Francisco Jaltepetongo",
+    "lat": 17.350795666666667,
+    "lng": -97.27660766666665
+  },
+  {
+    "label": "San Agustín Tlacotepec",
+    "lat": 17.20925727272727,
+    "lng": -97.51361954545455
+  },
+  {
+    "label": "San Francisco Cahuacuá",
+    "lat": 16.880282032258066,
+    "lng": -97.34777967741933
+  },
+  {
+    "label": "San Andrés Ixtlahuaca",
+    "lat": 17.069724,
+    "lng": -96.84018549999999
+  },
+  {
+    "label": "San Miguel Tilquiápam",
+    "lat": 16.75979175,
+    "lng": -96.55959150000001
+  },
+  {
+    "label": "San José Tenango",
+    "lat": 18.163536250000007,
+    "lng": -96.67233679285711
+  },
+  {
+    "label": "San Pedro Yólox",
+    "lat": 17.623728214285716,
+    "lng": -96.48129692857142
+  },
+  {
+    "label": "San Sebastián Río Hondo",
+    "lat": 16.190489142857142,
+    "lng": -96.44086957142858
+  },
+  {
+    "label": "San Antonio Acutla",
+    "lat": 17.744637333333333,
+    "lng": -97.49807549999998
+  },
+  {
+    "label": "San Francisco Sola",
+    "lat": 16.517184600000004,
+    "lng": -96.9471022
+  },
+  {
+    "label": "Villa Díaz Ordaz",
+    "lat": 17.050146857142856,
+    "lng": -96.41474042857143
+  },
+  {
+    "label": "Santa María Chimalapa",
+    "lat": 16.971090964912275,
+    "lng": -94.41222619298243
+  },
+  {
+    "label": "San Baltazar Loxicha",
+    "lat": 16.013888350000002,
+    "lng": -96.7984042
+  },
+  {
+    "label": "Santa Cruz de Bravo",
+    "lat": 17.581374,
+    "lng": -98.223989
+  },
+  {
+    "label": "San Miguel Achiutla",
+    "lat": 17.307337399999998,
+    "lng": -97.48835799999999
+  },
+  {
+    "label": "San Francisco Nuxaño",
+    "lat": 17.374747999999997,
+    "lng": -97.338272
+  },
+  {
+    "label": "Santa Catarina Tayata",
+    "lat": 17.3464504,
+    "lng": -97.5572413
+  },
+  {
+    "label": "San Miguel Mixtepec",
+    "lat": 16.76522435714286,
+    "lng": -96.9393972142857
+  },
+  {
+    "label": "Santa María Sola",
+    "lat": 16.574632375000004,
+    "lng": -97.03144625
+  },
+  {
+    "label": "San Martín Toxpalan",
+    "lat": 18.107048153846154,
+    "lng": -97.0409483076923
+  },
+  {
+    "label": "San José del Progreso",
+    "lat": 16.699327,
+    "lng": -96.68150433333332
+  },
+  {
+    "label": "San Marcial Ozolotepec",
+    "lat": 16.05347658064516,
+    "lng": -96.39961503225807
+  },
+  {
+    "label": "San Pedro Amuzgos",
+    "lat": 16.669583499999998,
+    "lng": -98.08900980000001
+  },
+  {
+    "label": "Huautla de Jiménez",
+    "lat": 18.146617354545445,
+    "lng": -96.80368715454544
+  },
+  {
+    "label": "San Agustín Etla",
+    "lat": 17.187444666666664,
+    "lng": -96.759236
+  },
+  {
+    "label": "San Miguel Tulancingo",
+    "lat": 17.751538666666665,
+    "lng": -97.44251591666666
+  },
+  {
+    "label": "San Andrés Zabache",
+    "lat": 16.600149,
+    "lng": -96.857736
+  },
+  {
+    "label": "San Juan Guichicovi",
+    "lat": 17.072071343749997,
+    "lng": -95.090174875
+  },
+  {
+    "label": "Santiago Chazumba",
+    "lat": 18.197411375,
+    "lng": -97.70499853125
+  },
+  {
+    "label": "Santa María Yucuhiti",
+    "lat": 17.032049879999995,
+    "lng": -97.79930212000004
+  },
+  {
+    "label": "Villa de Tututepec",
+    "lat": 16.047994972093026,
+    "lng": -97.53478347906979
+  },
+  {
+    "label": "Santa María Lachixío",
+    "lat": 16.707971124999997,
+    "lng": -97.02638625000002
+  },
+  {
+    "label": "Taniche",
+    "lat": 16.566964,
+    "lng": -96.753581
+  },
+  {
+    "label": "San Ildefonso Amatlán",
+    "lat": 16.288510714285714,
+    "lng": -96.45178371428572
+  },
+  {
+    "label": "San Raymundo Jalpan",
+    "lat": 16.98464225,
+    "lng": -96.7532415625
+  },
+  {
+    "label": "Guevea de Humboldt",
+    "lat": 16.81051230555555,
+    "lng": -95.39226758333334
+  },
+  {
+    "label": "San Bartolomé Yucuañe",
+    "lat": 17.232493400000003,
+    "lng": -97.4522374
+  },
+  {
+    "label": "San Juan del Río",
+    "lat": 16.891551333333336,
+    "lng": -96.16427333333333
+  },
+  {
+    "label": "La Reforma",
+    "lat": 16.6575600625,
+    "lng": -97.8594265625
+  },
+  {
+    "label": "San Andrés Lagunas",
+    "lat": 17.5733512,
+    "lng": -97.52232319999999
+  },
+  {
+    "label": "Santa María Yavesía",
+    "lat": 17.233292,
+    "lng": -96.429944
+  },
+  {
+    "label": "San Juan Teita",
+    "lat": 17.0943795,
+    "lng": -97.42069225
+  },
+  {
+    "label": "Santiago Astata",
+    "lat": 15.940753,
+    "lng": -95.68752477777778
+  },
+  {
+    "label": "San Miguel Amatitlán",
+    "lat": 17.88258533333333,
+    "lng": -98.01420666666668
+  },
+  {
+    "label": "Santiago Nacaltepec",
+    "lat": 17.5294091875,
+    "lng": -96.92460374999999
+  },
+  {
+    "label": "Huautepec",
+    "lat": 18.083615759999997,
+    "lng": -96.79416848000001
+  },
+  {
+    "label": "Santa Catalina Quierí",
+    "lat": 16.322201,
+    "lng": -96.265858
+  },
+  {
+    "label": "San Pedro y San Pablo Tequixtepec",
+    "lat": 18.085483363636364,
+    "lng": -97.70583631818182
+  },
+  {
+    "label": "San Agustín Atenango",
+    "lat": 17.60133427272727,
+    "lng": -97.99961172727272
+  },
+  {
+    "label": "Santa María Alotepec",
+    "lat": 17.04984188888889,
+    "lng": -95.85833244444444
+  },
+  {
+    "label": "Santa Ana Zegache",
+    "lat": 16.832299,
+    "lng": -96.72646519999999
+  },
+  {
+    "label": "Santa María Yalina",
+    "lat": 17.240471,
+    "lng": -96.262781
+  },
+  {
+    "label": "San Juan Comaltepec",
+    "lat": 17.311012166666668,
+    "lng": -95.9434435
+  },
+  {
+    "label": "Heroica Villa Tezoatlán de Segura y Luna, Cuna de la Independencia de Oaxaca",
+    "lat": 17.59553636111111,
+    "lng": -97.84345308333332
+  },
+  {
+    "label": "San Juan Bautista Suchitepec",
+    "lat": 17.97536957142857,
+    "lng": -97.66593271428572
+  },
+  {
+    "label": "Coicoyán de las Flores",
+    "lat": 17.229044352941177,
+    "lng": -98.22200305882355
+  },
+  {
+    "label": "Loma Bonita",
+    "lat": 18.01789787878786,
+    "lng": -95.88836572727277
+  },
+  {
+    "label": "Santa María Apazco",
+    "lat": 17.621774199999997,
+    "lng": -97.08560539999999
+  },
+  {
+    "label": "Santo Domingo Armenta",
+    "lat": 16.326009199999998,
+    "lng": -98.36438839999998
+  },
+  {
+    "label": "Santiago Llano Grande",
+    "lat": 16.49364728571428,
+    "lng": -98.27662614285714
+  },
+  {
+    "label": "San Juan Bautista Tlachichilco",
+    "lat": 17.595133333333333,
+    "lng": -98.32828366666668
+  },
+  {
+    "label": "Chiquihuitlán de Benito Juárez",
+    "lat": 17.991368625,
+    "lng": -96.7563853125
+  },
+  {
+    "label": "San Esteban Atatlahuca",
+    "lat": 17.072467371428573,
+    "lng": -97.6895516
+  },
+  {
+    "label": "San Felipe Usila",
+    "lat": 17.891688838709676,
+    "lng": -96.48832006451612
+  },
+  {
+    "label": "Acatlán de Pérez Figueroa",
+    "lat": 18.483576770186342,
+    "lng": -96.52922143478257
+  },
+  {
+    "label": "San Cristóbal Suchixtlahuaca",
+    "lat": 17.725528333333333,
+    "lng": -97.37128855555557
+  },
+  {
+    "label": "San Andrés Solaga",
+    "lat": 17.270696,
+    "lng": -96.227228
+  },
+  {
+    "label": "San Pablo Coatlán",
+    "lat": 16.1263625,
+    "lng": -96.81635390000001
+  },
+  {
+    "label": "Monjas",
+    "lat": 16.393281166666668,
+    "lng": -96.63399200000002
+  },
+  {
+    "label": "Ixpantepec Nieves",
+    "lat": 17.505930777777778,
+    "lng": -98.03708022222222
+  },
+  {
+    "label": "San Miguel del Río",
+    "lat": 17.3248295,
+    "lng": -96.56591499999999
+  },
+  {
+    "label": "Eloxochitlán de Flores Magón",
+    "lat": 18.185834035714286,
+    "lng": -96.87705835714287
+  },
+  {
+    "label": "San Mateo Tlapiltepec",
+    "lat": 17.808294666666665,
+    "lng": -97.42678433333333
+  },
+  {
+    "label": "Santa María Temaxcaltepec",
+    "lat": 16.1653328,
+    "lng": -97.1806916
+  },
+  {
+    "label": "San Antonio Tepetlapa",
+    "lat": 16.53122425,
+    "lng": -98.066582
+  },
+  {
+    "label": "San Jacinto Amilpas",
+    "lat": 17.100807,
+    "lng": -96.762562
+  },
+  {
+    "label": "Santiago Laollaga",
+    "lat": 16.62182542857143,
+    "lng": -95.23602000000001
+  },
+  {
+    "label": "Mixistlán de la Reforma",
+    "lat": 17.149656692307694,
+    "lng": -96.10650623076923
+  },
+  {
+    "label": "San Juan Quiahije",
+    "lat": 16.321475372093026,
+    "lng": -97.35933955813951
+  },
+  {
+    "label": "San Pedro Jocotipac",
+    "lat": 17.76726175,
+    "lng": -97.08251775
+  },
+  {
+    "label": "San Juan Ihualtepec",
+    "lat": 17.75674709090909,
+    "lng": -98.28641172727272
+  },
+  {
+    "label": "Santo Domingo Ixcatlán",
+    "lat": 16.9099361,
+    "lng": -97.5303177
+  },
+  {
+    "label": "San Jerónimo Tecóatl",
+    "lat": 18.155544428571428,
+    "lng": -96.91633028571428
+  },
+  {
+    "label": "San Agustín Amatengo",
+    "lat": 16.5143545,
+    "lng": -96.7878345
+  },
+  {
+    "label": "San Pedro Ixcatlán",
+    "lat": 18.153555521739126,
+    "lng": -96.53976521739126
+  },
+  {
+    "label": "San Lorenzo Cuaunecuiltitla",
+    "lat": 18.206453,
+    "lng": -96.913057
+  },
+  {
+    "label": "Santo Domingo Chihuitán",
+    "lat": 16.597466083333334,
+    "lng": -95.16750591666668
+  },
+  {
+    "label": "San Miguel Yotao",
+    "lat": 17.371613333333332,
+    "lng": -96.33702199999999
+  },
+  {
+    "label": "Santiago Miltepec",
+    "lat": 17.987012500000002,
+    "lng": -97.691159
+  },
+  {
+    "label": "Santiago Amoltepec",
+    "lat": 16.628073270833337,
+    "lng": -97.53362608333333
+  },
+  {
+    "label": "Santiago Textitlán",
+    "lat": 16.702896862068965,
+    "lng": -97.27965962068963
+  },
+  {
+    "label": "San Juan Bautista Lo de Soto",
+    "lat": 16.507711800000003,
+    "lng": -98.3417402
+  },
+  {
+    "label": "San Miguel Panixtlahuaca",
+    "lat": 16.252167727272727,
+    "lng": -97.41128536363637
+  },
+  {
+    "label": "Magdalena Mixtepec",
+    "lat": 16.89048725,
+    "lng": -96.91844975
+  },
+  {
+    "label": "San Bernardo Mixtepec",
+    "lat": 16.842753666666667,
+    "lng": -96.90524988888889
+  },
+  {
+    "label": "Natividad",
+    "lat": 17.296876,
+    "lng": -96.433294
+  },
+  {
+    "label": "San Pablo Cuatro Venados",
+    "lat": 16.97619911111111,
+    "lng": -96.88770511111112
+  },
+  {
+    "label": "San Bartolomé Quialana",
+    "lat": 16.9010054,
+    "lng": -96.499978
+  },
+  {
+    "label": "San Mateo Piñas",
+    "lat": 15.957002490566039,
+    "lng": -96.3396874716981
+  },
+  {
+    "label": "Ayoquezco de Aldama",
+    "lat": 16.685180454545456,
+    "lng": -96.85942027272728
+  },
+  {
+    "label": "Santa María Mixtequilla",
+    "lat": 16.390925428571425,
+    "lng": -95.27798164285714
+  },
+  {
+    "label": "San Mateo Yucutindoo",
+    "lat": 16.779912,
+    "lng": -97.41105811764706
+  },
+  {
+    "label": "San Antonio de la Cal",
+    "lat": 17.0313703,
+    "lng": -96.6969018
+  },
+  {
+    "label": "San Pedro Totolápam",
+    "lat": 16.663583523809525,
+    "lng": -96.23519909523809
+  },
+  {
+    "label": "Villa de Etla",
+    "lat": 17.1933875,
+    "lng": -96.7929605
+  },
+  {
+    "label": "San Juan Teitipac",
+    "lat": 16.9254302,
+    "lng": -96.61071360000001
+  },
+  {
+    "label": "Concepción Buenavista",
+    "lat": 17.961376105263163,
+    "lng": -97.42782610526315
+  },
+  {
+    "label": "Villa Hidalgo",
+    "lat": 17.181483714285715,
+    "lng": -96.1647557142857
+  },
+  {
+    "label": "Santiago Juxtlahuaca",
+    "lat": 17.21961287912088,
+    "lng": -97.99781903296703
+  },
+  {
+    "label": "Santa María Temaxcalapa",
+    "lat": 17.381099,
+    "lng": -96.162478
+  },
+  {
+    "label": "Santiago Pinotepa Nacional",
+    "lat": 16.275373326923077,
+    "lng": -98.1005323974359
+  },
+  {
+    "label": "San Gabriel Mixtepec",
+    "lat": 16.07031546153846,
+    "lng": -97.07570510256414
+  },
+  {
+    "label": "Santo Domingo de Morelos",
+    "lat": 15.835122318181817,
+    "lng": -96.6440188181818
+  },
+  {
+    "label": "San Miguel del Puerto",
+    "lat": 15.940200395348837,
+    "lng": -96.11981924418606
+  },
+  {
+    "label": "San Pedro y San Pablo Teposcolula",
+    "lat": 17.50060676,
+    "lng": -97.48893524
+  },
+  {
+    "label": "San Bartolomé Ayautla",
+    "lat": 18.037812600000002,
+    "lng": -96.6749536
+  },
+  {
+    "label": "San Juan Lachao",
+    "lat": 16.1784781,
+    "lng": -97.11023440000002
+  },
+  {
+    "label": "San Antonio Sinicahua",
+    "lat": 17.1527917,
+    "lng": -97.57828679999999
+  },
+  {
+    "label": "Santo Domingo Ozolotepec",
+    "lat": 16.171956714285717,
+    "lng": -96.32143257142857
+  },
+  {
+    "label": "Santo Domingo Zanatepec",
+    "lat": 16.471426613333332,
+    "lng": -94.35257562666673
+  },
+  {
+    "label": "San Mateo Sindihui",
+    "lat": 16.988622777777774,
+    "lng": -97.36612611111111
+  },
+  {
+    "label": "Villa de Zaachila",
+    "lat": 16.930057620689656,
+    "lng": -96.71896327586208
+  },
+  {
+    "label": "Yogana",
+    "lat": 16.4512276,
+    "lng": -96.79266700000001
+  },
+  {
+    "label": "Nuevo Zoquiápam",
+    "lat": 17.284051499999997,
+    "lng": -96.62157250000001
+  },
+  {
+    "label": "Santa Ana Tlapacoyan",
+    "lat": 16.7429474,
+    "lng": -96.8556994
+  },
+  {
+    "label": "San Juan Quiotepec",
+    "lat": 17.613967083333332,
+    "lng": -96.58068858333333
+  },
+  {
+    "label": "Mazatlán Villa de Flores",
+    "lat": 18.03485752252252,
+    "lng": -96.92164780180178
+  },
+  {
+    "label": "San Baltazar Chichicápam",
+    "lat": 16.76580266666667,
+    "lng": -96.486574
+  },
+  {
+    "label": "San Cristóbal Amoltepec",
+    "lat": 17.28628785714286,
+    "lng": -97.57976571428571
+  },
+  {
+    "label": "Santo Domingo Tonalá",
+    "lat": 17.683895150000005,
+    "lng": -98.01017860000002
+  },
+  {
+    "label": "Asunción Ocotlán",
+    "lat": 16.7571825,
+    "lng": -96.72208900000001
+  },
+  {
+    "label": "San Mateo Yoloxochitlán",
+    "lat": 18.141907,
+    "lng": -96.864468
+  },
+  {
+    "label": "Salina Cruz",
+    "lat": 16.196542633333337,
+    "lng": -95.21368323333336
+  },
+  {
+    "label": "Santiago Minas",
+    "lat": 16.438109571428573,
+    "lng": -97.2433937857143
+  },
+  {
+    "label": "Santiago Zacatepec",
+    "lat": 17.188955916666664,
+    "lng": -95.88495120833333
+  },
+  {
+    "label": "San Juan Bautista Tlacoatzintepec",
+    "lat": 17.87968511111111,
+    "lng": -96.58828377777778
+  },
+  {
+    "label": "Santa Cruz Itundujia",
+    "lat": 16.76273091803279,
+    "lng": -97.66916850819666
+  },
+  {
+    "label": "Santa María Zaniza",
+    "lat": 16.654464444444443,
+    "lng": -97.33232011111112
+  },
+  {
+    "label": "Putla Villa de Guerrero",
+    "lat": 17.028942235294117,
+    "lng": -97.87003271764706
+  },
+  {
+    "label": "Santa Ana Yareni",
+    "lat": 17.392881,
+    "lng": -96.62427366666667
+  },
+  {
+    "label": "Santo Domingo Nuxaá",
+    "lat": 17.172068459016394,
+    "lng": -97.06531350819672
+  },
+  {
+    "label": "San Pedro Huilotepec",
+    "lat": 16.237767333333334,
+    "lng": -95.156908
+  },
+  {
+    "label": "Santa Lucía Miahuatlán",
+    "lat": 16.181826384615388,
+    "lng": -96.62036092307692
+  },
+  {
+    "label": "Santiago Huauclilla",
+    "lat": 17.475259777777772,
+    "lng": -97.06422827777777
+  },
+  {
+    "label": "San Pedro Huamelula",
+    "lat": 15.982945791666667,
+    "lng": -95.74623179166666
+  },
+  {
+    "label": "Asunción Nochixtlán",
+    "lat": 17.43664551948052,
+    "lng": -97.18127054545454
+  },
+  {
+    "label": "San José Chiltepec",
+    "lat": 17.953142048780485,
+    "lng": -96.15462163414634
+  },
+  {
+    "label": "San Juan Juquila Vijanos",
+    "lat": 17.337667142857146,
+    "lng": -96.27343971428571
+  },
+  {
+    "label": "Villa Sola de Vega",
+    "lat": 16.536185425000003,
+    "lng": -97.03830916875002
+  },
+  {
+    "label": "Santa Catarina Mechoacán",
+    "lat": 16.32551475,
+    "lng": -97.84403175
+  },
+  {
+    "label": "San Vicente Lachixío",
+    "lat": 16.681940625,
+    "lng": -97.015579875
+  },
+  {
+    "label": "San Bartolomé Loxicha",
+    "lat": 15.941583625,
+    "lng": -96.7470373125
+  },
+  {
+    "label": "Teotitlán del Valle",
+    "lat": 17.0216105,
+    "lng": -96.5369195
+  },
+  {
+    "label": "Santa Ana Ateixtlahuaca",
+    "lat": 18.23011671428571,
+    "lng": -96.87880771428571
+  },
+  {
+    "label": "San Pedro Ocotepec",
+    "lat": 16.965559,
+    "lng": -95.842528
+  },
+  {
+    "label": "Santiago Ixtayutla",
+    "lat": 16.550331970588235,
+    "lng": -97.68259752941175
+  },
+  {
+    "label": "Santa María Colotepec",
+    "lat": 15.862020312499999,
+    "lng": -96.9381048
+  },
+  {
+    "label": "Santa Cruz Xitla",
+    "lat": 16.34992585714286,
+    "lng": -96.68234585714286
+  },
+  {
+    "label": "Santa María Yolotepec",
+    "lat": 16.881912333333332,
+    "lng": -97.48053633333332
+  },
+  {
+    "label": "San Miguel Piedras",
+    "lat": 16.99035933333333,
+    "lng": -97.23387855555555
+  },
+  {
+    "label": "San Miguel Tecomatlán",
+    "lat": 17.395414600000002,
+    "lng": -97.269756
+  },
+  {
+    "label": "San Juan Bautista Atatlahuca",
+    "lat": 17.536980333333332,
+    "lng": -96.82925116666667
+  },
+  {
+    "label": "Santiago Ayuquililla",
+    "lat": 17.920423818181817,
+    "lng": -97.96121099999999
+  },
+  {
+    "label": "San Pedro Yucunama",
+    "lat": 17.561004,
+    "lng": -97.482591
+  },
+  {
+    "label": "San Lorenzo Victoria",
+    "lat": 17.655842999999997,
+    "lng": -98.107034
+  },
+  {
+    "label": "Santiago Jamiltepec",
+    "lat": 16.17752623636363,
+    "lng": -97.77665463636365
+  },
+  {
+    "label": "Santiago Matatlán",
+    "lat": 16.837882880000002,
+    "lng": -96.42320135999998
+  },
+  {
+    "label": "Zapotitlán Palmas",
+    "lat": 17.880164799999996,
+    "lng": -97.8176736
+  },
+  {
+    "label": "Pinotepa de Don Luis",
+    "lat": 16.40555104347826,
+    "lng": -97.96673030434783
+  },
+  {
+    "label": "Tlacotepec Plumas",
+    "lat": 17.847681333333334,
+    "lng": -97.44482583333333
+  },
+  {
+    "label": "Nejapa de Madero",
+    "lat": 16.695647677419355,
+    "lng": -95.79537274193548
+  },
+  {
+    "label": "San Sebastián Coatlán",
+    "lat": 16.106115157894738,
+    "lng": -96.88845778947369
+  },
+  {
+    "label": "Abejones",
+    "lat": 17.433462,
+    "lng": -96.60308850000001
+  },
+  {
+    "label": "Heroica Ciudad de Ejutla de Crespo",
+    "lat": 16.579961175,
+    "lng": -96.73080279999998
+  },
+  {
+    "label": "Santa María Zoquitlán",
+    "lat": 16.549917620689655,
+    "lng": -96.35544151724137
+  },
+  {
+    "label": "San Bartolo Yautepec",
+    "lat": 16.433193250000002,
+    "lng": -95.94409175
+  },
+  {
+    "label": "Guadalupe Etla",
+    "lat": 17.180319,
+    "lng": -96.7990155
+  },
+  {
+    "label": "San Miguel Santa Flor",
+    "lat": 17.928375111111112,
+    "lng": -96.79757222222223
+  },
+  {
+    "label": "San Juan Lajarcia",
+    "lat": 16.493761,
+    "lng": -95.905089
+  },
+  {
+    "label": "Magdalena Tlacotepec",
+    "lat": 16.509374166666667,
+    "lng": -95.20126983333334
+  },
+  {
+    "label": "San Andrés Teotilálpam",
+    "lat": 17.94497471428571,
+    "lng": -96.62073860714285
+  },
+  {
+    "label": "Mariscala de Juárez",
+    "lat": 17.851757000000003,
+    "lng": -98.13498914285715
+  },
+  {
+    "label": "San Agustín de las Juntas",
+    "lat": 17.00678042857143,
+    "lng": -96.70512299999999
+  },
+  {
+    "label": "San Martín de los Cansecos",
+    "lat": 16.656918666666666,
+    "lng": -96.72270133333332
+  },
+  {
+    "label": "San Pedro Mártir Yucuxaco",
+    "lat": 17.438649636363635,
+    "lng": -97.62157254545454
+  },
+  {
+    "label": "Santa Ana del Valle",
+    "lat": 16.994827,
+    "lng": -96.471675
+  },
+  {
+    "label": "San Juan Sayultepec",
+    "lat": 17.44717625,
+    "lng": -97.293331
+  },
+  {
+    "label": "San Pedro Mártir",
+    "lat": 16.744365000000002,
+    "lng": -96.7135255
+  },
+  {
+    "label": "Santo Domingo Petapa",
+    "lat": 16.878119249999997,
+    "lng": -95.20986018749998
+  },
+  {
+    "label": "Santa Cruz Papalutla",
+    "lat": 16.959489,
+    "lng": -96.584911
+  },
+  {
+    "label": "San Mateo del Mar",
+    "lat": 16.2082635625,
+    "lng": -95.0386055625
+  },
+  {
+    "label": "Villa Talea de Castro",
+    "lat": 17.364995,
+    "lng": -96.24740779999999
+  },
+  {
+    "label": "Santa María Jacatepec",
+    "lat": 17.865378054054048,
+    "lng": -96.17185124324324
+  },
+  {
+    "label": "San Bartolomé Zoogocho",
+    "lat": 17.240789,
+    "lng": -96.243051
+  },
+  {
+    "label": "San Agustín Chayuco",
+    "lat": 16.440533071428572,
+    "lng": -97.82686771428574
+  },
+  {
+    "label": "Santiago Laxopa",
+    "lat": 17.224304,
+    "lng": -96.305042
+  },
+  {
+    "label": "San Pedro Teozacoalco",
+    "lat": 17.001251500000002,
+    "lng": -97.27426141666668
+  },
+  {
+    "label": "Santa Catarina Ticuá",
+    "lat": 17.066219833333335,
+    "lng": -97.53444683333333
+  },
+  {
+    "label": "Santo Domingo Tepuxtepec",
+    "lat": 16.937244678571428,
+    "lng": -96.06851167857143
+  },
+  {
+    "label": "Oaxaca de Juárez",
+    "lat": 17.108409531250004,
+    "lng": -96.73265984374999
+  },
+  {
+    "label": "Totontepec Villa de Morelos",
+    "lat": 17.246905777777773,
+    "lng": -96.009535
+  },
+  {
+    "label": "San Dionisio Ocotepec",
+    "lat": 16.771149206896553,
+    "lng": -96.36942831034484
+  },
+  {
+    "label": "San Martín Itunyoso",
+    "lat": 17.211816333333335,
+    "lng": -97.85827416666666
+  },
+  {
+    "label": "San Andrés Cabecera Nueva",
+    "lat": 16.859704571428573,
+    "lng": -97.75691063265307
+  },
+  {
+    "label": "San Juan Yaeé",
+    "lat": 17.430951,
+    "lng": -96.28935633333333
+  },
+  {
+    "label": "San Juan Cacahuatepec",
+    "lat": 16.619971409090912,
+    "lng": -98.16361354545457
+  },
+  {
+    "label": "Santiago Tenango",
+    "lat": 17.303506235294122,
+    "lng": -96.99673470588237
+  },
+  {
+    "label": "Yutanduchi de Guerrero",
+    "lat": 17.0543495,
+    "lng": -97.29715700000001
+  },
+  {
+    "label": "Santo Domingo Yodohino",
+    "lat": 17.616886,
+    "lng": -97.683022
+  },
+  {
+    "label": "San Pedro Quiatoni",
+    "lat": 16.763015301886792,
+    "lng": -96.04023813207549
+  },
+  {
+    "label": "Santiago Jocotepec",
+    "lat": 17.668857589743588,
+    "lng": -95.96765274358975
+  },
+  {
+    "label": "Santiago Choápam",
+    "lat": 17.415466000000002,
+    "lng": -95.84252739999998
+  },
+  {
+    "label": "San Francisco Chindúa",
+    "lat": 17.426636,
+    "lng": -97.30779
+  },
+  {
+    "label": "San Andrés Sinaxtla",
+    "lat": 17.489455,
+    "lng": -97.30945171428571
+  },
+  {
+    "label": "San Miguel Chimalapa",
+    "lat": 16.64680782352941,
+    "lng": -94.47624126470586
+  },
+  {
+    "label": "San Pedro Apóstol",
+    "lat": 16.73855,
+    "lng": -96.72638166666667
+  },
+  {
+    "label": "San Juan Atepec",
+    "lat": 17.436507142857145,
+    "lng": -96.52506414285713
+  },
+  {
+    "label": "San Juan Chilateca",
+    "lat": 16.8297515,
+    "lng": -96.676305
+  },
+  {
+    "label": "San Jerónimo Taviche",
+    "lat": 16.711222357142862,
+    "lng": -96.59090792857141
+  },
+  {
+    "label": "Tepelmeme Villa de Morelos",
+    "lat": 17.96678676923077,
+    "lng": -97.34667884615386
+  },
+  {
+    "label": "San Francisco Huehuetlán",
+    "lat": 18.1983798,
+    "lng": -96.9378874
+  },
+  {
+    "label": "San Miguel Quetzaltepec",
+    "lat": 16.983137499999998,
+    "lng": -95.76117154545453
+  },
+  {
+    "label": "San Simón Zahuatlán",
+    "lat": 17.833764166666665,
+    "lng": -98.00115275
+  },
+  {
+    "label": "Santa María Nativitas",
+    "lat": 17.6471953,
+    "lng": -97.3302064
+  },
+  {
+    "label": "Santa Cruz Nundaco",
+    "lat": 17.166326761904767,
+    "lng": -97.71763285714285
+  },
+  {
+    "label": "Santa María Tlalixtac",
+    "lat": 17.935428785714283,
+    "lng": -96.73495321428572
+  },
+  {
+    "label": "Santa María Peñoles",
+    "lat": 17.034873787878787,
+    "lng": -97.02982266666666
+  },
+  {
+    "label": "Sitio de Xitlapehua",
+    "lat": 16.3701424,
+    "lng": -96.5434194
+  },
+  {
+    "label": "Pluma Hidalgo",
+    "lat": 15.921055215384607,
+    "lng": -96.43098681538461
+  },
+  {
+    "label": "San Antonino Monte Verde",
+    "lat": 17.51889533333333,
+    "lng": -97.72640286666665
+  },
+  {
+    "label": "Santa Catarina Quioquitani",
+    "lat": 16.315654,
+    "lng": -96.284965
+  },
+  {
+    "label": "San Francisco Logueche",
+    "lat": 16.3759582,
+    "lng": -96.37867359999998
+  },
+  {
+    "label": "Santa María Ozolotepec",
+    "lat": 16.100557027027026,
+    "lng": -96.34818151351351
+  },
+  {
+    "label": "San José del Peñasco",
+    "lat": 16.2903615,
+    "lng": -96.49878583333333
+  },
+  {
+    "label": "Santiago Yucuyachi",
+    "lat": 17.614850999999998,
+    "lng": -98.20424366666667
+  },
+  {
+    "label": "Santa Cruz Xoxocotlán",
+    "lat": 17.023671132075474,
+    "lng": -96.75443671698115
+  },
+  {
+    "label": "Santiago Zoochila",
+    "lat": 17.220566,
+    "lng": -96.242139
+  },
+  {
+    "label": "Santo Domingo Ingenio",
+    "lat": 16.574629538461537,
+    "lng": -94.73558807692308
+  },
+  {
+    "label": "San Pablo Etla",
+    "lat": 17.154355200000005,
+    "lng": -96.76859920000001
+  },
+  {
+    "label": "San Francisco Cajonos",
+    "lat": 17.1697525,
+    "lng": -96.2615035
+  },
+  {
+    "label": "San Lorenzo",
+    "lat": 16.4167135,
+    "lng": -97.88834274999999
+  },
+  {
+    "label": "San Antonino Castillo Velasco",
+    "lat": 16.81236516666667,
+    "lng": -96.69434999999999
+  },
+  {
+    "label": "Santiago Apóstol",
+    "lat": 16.805147249999997,
+    "lng": -96.71395724999999
+  },
+  {
+    "label": "San Jerónimo Tlacochahuaya",
+    "lat": 17.003431130434777,
+    "lng": -96.54829134782607
+  },
+  {
+    "label": "Miahuatlán de Porfirio Díaz",
+    "lat": 16.3443325754717,
+    "lng": -96.61014266037736
+  },
+  {
+    "label": "San Miguel Tequixtepec",
+    "lat": 17.802574444444446,
+    "lng": -97.32490144444445
+  },
+  {
+    "label": "San Pedro Ocopetatillo",
+    "lat": 18.184936,
+    "lng": -96.913153
+  },
+  {
+    "label": "Santa Catarina Lachatao",
+    "lat": 17.184145869565217,
+    "lng": -96.5017403043478
+  },
+  {
+    "label": "Santa María la Asunción",
+    "lat": 18.10537075,
+    "lng": -96.81611675
+  },
+  {
+    "label": "Matías Romero Avendaño",
+    "lat": 17.194909971428576,
+    "lng": -95.01874356
+  },
+  {
+    "label": "Chalcatongo de Hidalgo",
+    "lat": 16.99353967857143,
+    "lng": -97.55024514285716
+  },
+  {
+    "label": "Santa María Texcatitlán",
+    "lat": 17.709756749999997,
+    "lng": -97.06831675
+  },
+  {
+    "label": "San Juan Tabaá",
+    "lat": 17.303001000000002,
+    "lng": -96.211968
+  },
+  {
+    "label": "San Pedro Juchatengo",
+    "lat": 16.326823333333337,
+    "lng": -97.10418983333334
+  },
+  {
+    "label": "Zapotitlán Lagunas",
+    "lat": 17.748529124999997,
+    "lng": -98.3930704375
+  },
+  {
+    "label": "Magdalena Ocotlán",
+    "lat": 16.708923,
+    "lng": -96.71231333333334
+  },
+  {
+    "label": "Santiago Nejapilla",
+    "lat": 17.419760000000004,
+    "lng": -97.3740528
+  },
+  {
+    "label": "Santiago Apoala",
+    "lat": 17.658808,
+    "lng": -97.139605625
+  },
+  {
+    "label": "San Pablo Villa de Mitla",
+    "lat": 16.933265454545452,
+    "lng": -96.33864572727272
+  },
+  {
+    "label": "Santa María Tataltepec",
+    "lat": 17.140803499999997,
+    "lng": -97.39191600000001
+  },
+  {
+    "label": "San Pedro Sochiápam",
+    "lat": 17.81392375,
+    "lng": -96.645771125
+  },
+  {
+    "label": "Santa Catarina Yosonotú",
+    "lat": 17.0082059375,
+    "lng": -97.66971956249999
+  },
+  {
+    "label": "Santa Inés Yatzeche",
+    "lat": 16.804371,
+    "lng": -96.755109
+  },
+  {
+    "label": "Santa María Petapa",
+    "lat": 16.889596,
+    "lng": -95.0388421851852
+  },
+  {
+    "label": "Santa María Tecomavaca",
+    "lat": 17.975723600000002,
+    "lng": -97.0052466
+  },
+  {
+    "label": "Santa Cruz Tacache de Mina",
+    "lat": 17.821781333333334,
+    "lng": -98.15273066666667
+  },
+  {
+    "label": "Heroica Ciudad de Tlaxiaco",
+    "lat": 17.208417981651376,
+    "lng": -97.67676135779817
+  },
+  {
+    "label": "Ciudad Ixtepec",
+    "lat": 16.57509273809524,
+    "lng": -95.11001300000002
+  },
+  {
+    "label": "Santa Lucía Ocotlán",
+    "lat": 16.730296000000003,
+    "lng": -96.6649835
+  },
+  {
+    "label": "San Ildefonso Sola",
+    "lat": 16.559689923076924,
+    "lng": -96.97086876923078
+  },
+  {
+    "label": "San Miguel Suchixtepec",
+    "lat": 16.079306217391306,
+    "lng": -96.46292613043478
+  },
+  {
+    "label": "Nazareno Etla",
+    "lat": 17.1767845,
+    "lng": -96.832792
+  },
+  {
+    "label": "San Juan Tamazola",
+    "lat": 17.110395568965515,
+    "lng": -97.12090060344828
+  },
+  {
+    "label": "El Espinal",
+    "lat": 16.467982561904766,
+    "lng": -95.04174973333338
+  },
+  {
+    "label": "San Jorge Nuchita",
+    "lat": 17.659306833333332,
+    "lng": -98.10173033333332
+  },
+  {
+    "label": "El Barrio de la Soledad",
+    "lat": 16.800931918032784,
+    "lng": -95.04211962295082
+  },
+  {
+    "label": "San Jacinto Tlacotepec",
+    "lat": 16.51910141666667,
+    "lng": -97.37557424999999
+  },
+  {
+    "label": "Santiago Lalopa",
+    "lat": 17.4172715,
+    "lng": -96.25106550000001
+  },
+  {
+    "label": "Santa María Zacatepec",
+    "lat": 16.782255722222224,
+    "lng": -97.99249530555556
+  },
+  {
+    "label": "San Andrés Dinicuiti",
+    "lat": 17.696042166666665,
+    "lng": -97.694339
+  },
+  {
+    "label": "Villa Tejúpam de la Unión",
+    "lat": 17.66333673333333,
+    "lng": -97.46359439999999
+  },
+  {
+    "label": "Santa María Ipalapa",
+    "lat": 16.61351666666667,
+    "lng": -98.02142691666666
+  },
+  {
+    "label": "San Antonino el Alto",
+    "lat": 16.8204956875,
+    "lng": -97.02634456249999
+  },
+  {
+    "label": "Santo Domingo Teojomulco",
+    "lat": 16.57748187878788,
+    "lng": -97.28076612121212
+  },
+  {
+    "label": "Santa María Nduayaco",
+    "lat": 17.408648,
+    "lng": -97.50608130434783
+  },
+  {
+    "label": "Santa María Quiegolani",
+    "lat": 16.2898478,
+    "lng": -96.04202180000001
+  },
+  {
+    "label": "Santa María Jaltianguis",
+    "lat": 17.362561833333334,
+    "lng": -96.52153550000001
+  },
+  {
+    "label": "San Francisco Ozolotepec",
+    "lat": 16.089477,
+    "lng": -96.20384933333334
+  },
+  {
+    "label": "Santa María Tonameca",
+    "lat": 15.774262557692307,
+    "lng": -96.6817484903846
+  },
+  {
+    "label": "Santiago Tepetlapa",
+    "lat": 17.785834,
+    "lng": -97.40000574999999
+  },
+  {
+    "label": "Santa María Chachoápam",
+    "lat": 17.543772399999998,
+    "lng": -97.2758268
+  },
+  {
+    "label": "Villa de Chilapa de Díaz",
+    "lat": 17.592613666666665,
+    "lng": -97.63057433333334
+  },
+  {
+    "label": "Santiago Yaitepec",
+    "lat": 16.193983428571432,
+    "lng": -97.24520157142857
+  },
+  {
+    "label": "Candelaria Loxicha",
+    "lat": 15.92495165909091,
+    "lng": -96.5187524886364
+  },
+  {
+    "label": "San Francisco Telixtlahuaca",
+    "lat": 17.375620538461536,
+    "lng": -96.9370448846154
+  },
+  {
+    "label": "Santa Inés de Zaragoza",
+    "lat": 17.270823147058827,
+    "lng": -97.15096370588236
+  },
+  {
+    "label": "Santa María Yosoyúa",
+    "lat": 17.1138525,
+    "lng": -97.50622616666665
+  },
+  {
+    "label": "Reyes Etla",
+    "lat": 17.21468022222222,
+    "lng": -96.81649599999999
+  },
+  {
+    "label": "Santo Domingo Tehuantepec",
+    "lat": 16.254562788888897,
+    "lng": -95.31657849999998
+  },
+  {
+    "label": "Reforma de Pineda",
+    "lat": 16.4008712,
+    "lng": -94.45201879999999
+  },
+  {
+    "label": "San Juan Achiutla",
+    "lat": 17.3426463,
+    "lng": -97.5089019
+  },
+  {
+    "label": "Santa Catarina Zapoquila",
+    "lat": 18.055606166666667,
+    "lng": -97.58903316666665
+  },
+  {
+    "label": "San Miguel Ejutla",
+    "lat": 16.593159,
+    "lng": -96.737802
+  },
+  {
+    "label": "San Pedro Ixtlahuaca",
+    "lat": 17.055920514285713,
+    "lng": -96.80307265714286
+  },
+  {
+    "label": "San Pedro Tapanatepec",
+    "lat": 16.30103617837839,
+    "lng": -94.19655850270271
+  },
+  {
+    "label": "Santa Ana Cuauhtémoc",
+    "lat": 17.974285727272733,
+    "lng": -96.79797172727272
+  },
+  {
+    "label": "San Juan Diuxi",
+    "lat": 17.274504999999998,
+    "lng": -97.38268500000001
+  },
+  {
+    "label": "Santa Catarina Juquila",
+    "lat": 16.153545562500007,
+    "lng": -97.30615795
+  },
+  {
+    "label": "San Cristóbal Amatlán",
+    "lat": 16.309995750000002,
+    "lng": -96.38454
+  },
+  {
+    "label": "Magdalena Yodocono de Porfirio Díaz",
+    "lat": 17.376472333333336,
+    "lng": -97.36944333333334
+  },
+  {
+    "label": "San Juan Ñumí",
+    "lat": 17.416243959999996,
+    "lng": -97.73820559999999
+  },
+  {
+    "label": "Santiago Comaltepec",
+    "lat": 17.62050028571429,
+    "lng": -96.41863314285715
+  },
+  {
+    "label": "San Miguel Aloápam",
+    "lat": 17.4024695,
+    "lng": -96.70390366666668
+  },
+  {
+    "label": "Santiago Ixcuintepec",
+    "lat": 16.916127666666664,
+    "lng": -95.59239150000002
+  },
+  {
+    "label": "San Pedro Nopala",
+    "lat": 17.80948725,
+    "lng": -97.54703237500001
+  },
+  {
+    "label": "San Miguel Soyaltepec",
+    "lat": 18.254008230769227,
+    "lng": -96.39587416923075
+  },
+  {
+    "label": "Santiago Yolomécatl",
+    "lat": 17.46559525,
+    "lng": -97.57103024999999
+  },
+  {
+    "label": "Santo Tomás Mazaltepec",
+    "lat": 17.173527,
+    "lng": -96.871533
+  },
+  {
+    "label": "Valerio Trujano",
+    "lat": 17.781554999999997,
+    "lng": -96.97873166666666
+  },
+  {
+    "label": "San Lucas Camotlán",
+    "lat": 16.9455885,
+    "lng": -95.699086
+  },
+  {
+    "label": "San Juan Bautista Valle Nacional",
+    "lat": 17.79390516666666,
+    "lng": -96.32362353846152
+  },
+  {
+    "label": "San Andrés Zautla",
+    "lat": 17.189573666666668,
+    "lng": -96.85688640000002
+  },
+  {
+    "label": "Santa María Pápalo",
+    "lat": 17.822051000000002,
+    "lng": -96.75588133333332
+  },
+  {
+    "label": "Santa María Ixcatlán",
+    "lat": 17.8545045,
+    "lng": -97.194165
+  },
+  {
+    "label": "Santo Domingo Roayaga",
+    "lat": 17.334911,
+    "lng": -96.08950933333334
+  },
+  {
+    "label": "San Martín Huamelúlpam",
+    "lat": 17.399013090909094,
+    "lng": -97.60692872727273
+  },
+  {
+    "label": "Santiago Yosondúa",
+    "lat": 16.853164534883717,
+    "lng": -97.55311439534883
+  },
+  {
+    "label": "Santiago Niltepec",
+    "lat": 16.52562744444444,
+    "lng": -94.59491333333335
+  },
+  {
+    "label": "Santa María Guelacé",
+    "lat": 16.994824,
+    "lng": -96.61172549999999
+  },
+  {
+    "label": "Santa Catarina Loxicha",
+    "lat": 16.063777666666667,
+    "lng": -96.71943384848487
+  },
+  {
+    "label": "Santiago Nuyoó",
+    "lat": 17.0099725625,
+    "lng": -97.75046868750002
+  },
+  {
+    "label": "San Martín Tilcajete",
+    "lat": 16.862590750000003,
+    "lng": -96.698146
+  },
+  {
+    "label": "San Dionisio Ocotlán",
+    "lat": 16.7455762,
+    "lng": -96.6648236
+  },
+  {
+    "label": "San Juan del Estado",
+    "lat": 17.289155599999997,
+    "lng": -96.79519760000001
+  },
+  {
+    "label": "San Martín Peras",
+    "lat": 17.367912130434785,
+    "lng": -98.24486293478262
+  },
+  {
+    "label": "La Compañía",
+    "lat": 16.573298499999996,
+    "lng": -96.83885491666666
+  },
+  {
+    "label": "San Juan Bautista Cuicatlán",
+    "lat": 17.747692941176474,
+    "lng": -96.97188373529411
+  },
+  {
+    "label": "San Andrés Yaá",
+    "lat": 17.294003,
+    "lng": -96.14876666666667
+  }
+]

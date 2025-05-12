@@ -1,144 +1,167 @@
-# Manual de Instalación y Configuración del Proyecto BancoSangre
-
-## 1. Clonación del Repositorio con Todas las Ramas
-
-### Clonar el repositorio con todas sus ramas remotas
-
-Para clonar el repositorio completo con todas las ramas, utiliza el siguiente comando:
-
-```bash
-git clone --branch main https://github.com/MicheRomero3012/BancoSangre.git
-```
-
-> Esto descarga el repositorio y te coloca directamente en la rama `main`. Al usar `--branch main`, te aseguras de clonar desde la rama principal.
-
-### Verificar las ramas disponibles
-
-Una vez que el repositorio se haya clonado, puedes listar todas las ramas disponibles:
-
-```bash
-git branch -a
-```
-
-> Esto mostrará tanto las ramas locales como las remotas. Las ramas remotas estarán listadas como `remotes/origin/nombre_de_rama`.
-
-### Cambiar a otra rama
-
-Para cambiar a una rama diferente (por ejemplo, la rama `frontend`), utiliza el siguiente comando:
-
-```bash
-git checkout frontend
-```
-
-> Esto cambiará tu rama activa a `frontend`.
-
-### Actualizar las ramas remotas
-
-Si quieres asegurarte de que tienes todas las actualizaciones de las ramas remotas, puedes ejecutar:
-
-```bash
-git fetch
-```
-
-> Esto actualizará tu repositorio local con las ramas y los cambios más recientes desde el repositorio remoto.
+# 🩸 Sistema de Gestión de Donadores de Sangre
 
 ---
 
-## 2. Creación del Entorno Virtual
+## 🚀 Guía de Configuración del Proyecto
 
-Después de clonar el repositorio y antes de trabajar en el proyecto, se debe crear un entorno virtual local que contendrá las dependencias del proyecto.
-
-### Crear un entorno virtual
-
-En la raíz del repositorio clonado, crea un entorno virtual:
+### 🔁 1. Clonación del Repositorio
 
 ```bash
+# Clona el repositorio
+git clone <url_del_repositorio>
+
+# Lista todas las ramas disponibles
+git branch -a
+
+# Cambia a la rama de trabajo
+git checkout <nombre_rama>
+```
+
+---
+
+### 🐍 2. Configuración del Entorno Virtual e Instalación de Dependencias
+
+> ⚠️ Esto solo es necesario después de hacer un `pull` del repositorio remoto.
+
+```bash
+# Crear entorno virtual
 python -m venv venv
-```
 
-Luego, activa el entorno virtual:
-
-```bash
+# Activar entorno virtual
+# En Windows:
 venv\Scripts\activate
-```
+# En macOS/Linux:
+source venv/bin/activate
 
-> El entorno virtual ahora está activo y verás un prefijo `(venv)` en tu terminal.
-
-### Instalar las dependencias
-
-Asegúrate de tener el archivo `requirements.txt` en la raíz del repositorio. Luego, instala las dependencias:
-
-```bash
+# Instalar requerimientos
 pip install -r requirements.txt
 ```
 
 ---
 
-## 3. Configuración de la Base de Datos `bancodb` en PostgreSQL para Windows
+### 🗂️ 3. Migraciones de la Base de Datos
 
-### Abrir la Consola de PostgreSQL
+Ejecuta las migraciones **en este orden** para que todo funcione correctamente:
 
-Se realizará la configuración inicial de PostgreSQL. Sigue estos pasos:
-
-- Abre la consola de comandos **"SQL Shell (psql)"**
-- Proporciona la siguiente información:
-  - **Server:** `localhost`
-  - **Database:** (Presiona `Enter` para dejar el valor por defecto)
-  - **Port:** (Presiona `Enter` para dejar el valor por defecto)
-  - **Username:** `postgres`
-  - **Password:** Introducir la contraseña configurada previamente.
-
-### Crear la base de datos `bancodb`
-
-```sql
-CREATE DATABASE bancodb;
+```bash
+python manage.py migrate rol
+python manage.py migrate usuario
+python manage.py migrate municipio
+python manage.py migrate colonia
+python manage.py migrate coordenada
+python manage.py migrate direccion
+python manage.py migrate donador
+python manage.py migrate
 ```
 
-### Conectar a la base de datos
+#### 🧹 Nota: Si necesitas borrar y crear una nueva base de datos desde `psql`:
 
-```sql
-\c bancodb
-```
+```bash
+# Entra a psql
+psql
 
-### Verificar la estructura de las bases de datos
+# Lista las bases de datos
+\l
 
-Para confirmar que la base de datos se creó correctamente:
+# Borra la base de datos existente
+DROP DATABASE nombre_base;
 
-```sql
-\dt
+# Crea una nueva base de datos
+CREATE DATABASE nombre_base;
+
+# Verifica que se haya creado
+\l
 ```
 
 ---
 
-## 4. Configuración del Proyecto en Django
+### 🛡️ 4. Creación de Roles
 
-Una vez creada la base de datos, verifica la configuración en el entorno de Django. Abre el archivo `settings.py` ubicado en la ruta:
-
+```bash
+# Abre la consola de Django
+python manage.py shell
 ```
-bancoSangre/settings.py
-```
 
-Configura la base de datos de la siguiente manera:
+Dentro de la consola de Python:
 
 ```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bancodb',
-        'USER': 'postgres',
-        'PASSWORD': '689447',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+from rol.models import Rol
+
+# Crear roles
+admin_role = Rol.objects.create(nombre='admin', permisos=['create', 'read', 'update', 'delete'])
+donador_role = Rol.objects.create(nombre='donador', permisos=['read', 'create'])
+
+# Verificar usuario y sus permisos
+from usuario.models import Usuario
+usuario = Usuario.objects.get(correo='dalia@gmail.com')
+print(f"Nombre de usuario: {usuario.nombre_usuario}")
+print(f"Rol del usuario: {usuario.rol.nombre}")
+print(f"Permisos del rol: {usuario.rol.permisos}")
+
+# Listar todos los roles
+Rol.objects.all()
 ```
 
+👉 Para salir de la consola:
+```
+CTRL + Z y ENTER
+```
 
+---
 
-Ahora para montar el proyecto deberas ejecutar el comando `python manage.py runserver`, sera como en el ejemplo siguiente: 
+### 🧑‍💻 5. Creación del Superusuario
+
+```bash
+# Crear superusuario
+python manage.py createsuperuser
+```
+
+> 📌 Usa estos datos recomendados:
+
+- **Correo:** `admin@gmail.com`  
+- **Usuario:** `admin`  
+- **Contraseña:** `admin1234`  
+- **Rol:** `1`  
+
+#### 🔑 Generar Token JWT
+
 ```python
-(venv) PS C:\Users\brian\OneDrive\Documentos\proyectos\GDP\BancoSangre\bancoSangre> python manage.py runserver
+from usuario.models import Usuario
+from rest_framework_simplejwt.tokens import RefreshToken
+
+usuario = Usuario.objects.get(correo='admin@gmail.com')
+refresh = RefreshToken.for_user(usuario)
+
+print(f'Refresh Token: {refresh}')
+print(f'Access Token: {refresh.access_token}')
 ```
-![image](https://github.com/user-attachments/assets/3f0ebc98-1108-490a-8d23-2395598d95d6)
+
+---
+
+### ▶️ 6. Ejecutar el Proyecto
+
+```bash
+python manage.py runserver
+```
+
+---
+
+### 📫 7. Verificación con Postman
+
+1. Abre Postman y ve a la pestaña **Authorization**.
+2. Selecciona `Bearer Token` y pega el `Access Token` generado.
+3. Realiza tus peticiones a las rutas protegidas.
+
+```python
+from usuario.models import Usuario
+
+usuario = Usuario.objects.get(correo='dalia@gmail.com')
+print(f"Nombre de usuario: {usuario.nombre_usuario}")
+print(f"Rol del usuario: {usuario.rol.nombre}")
+print(f"Permisos del rol: {usuario.rol.permisos}")
+```
+
+---
 
 
+    Desarrollado por el equipo 3 — @MicheRomero3012 & @dalia20031994 💻❤️

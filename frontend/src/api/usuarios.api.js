@@ -1,5 +1,13 @@
-import axios from 'axios'
-//para hace consulatas al backend
-export const getUsuarios = () => {
-   return axios.get('http://127.0.0.1:8000/api/usuarios/')
-}
+import axios from 'axios';
+/*Permite generar al token al mandarle el correo y contraseña de un usuario registrado*/ 
+export const loginRequest = (correo, password) => {
+   return axios.post('http://localhost:8000/api/token/', {
+     correo,
+     password,
+   }, {
+     headers: {
+       'Content-Type': 'application/json',
+     },
+   });
+ };
+ 

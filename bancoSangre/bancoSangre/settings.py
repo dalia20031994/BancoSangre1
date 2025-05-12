@@ -37,11 +37,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'rest_framework',
+    'rest_framework.authtoken',
+    
+    'corsheaders',  # lo agregaste para las solicitudes del frontend
+
     'usuario',
     'rol',
-    'corsheaders',# lo agrege para las solicitudes del fron
+    'municipio',
+    'colonia',
+    'coordenada',
+    'direccion',
+    'donador',
 ]
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',# lo agrege para las solicitudes del fron
@@ -111,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 
@@ -149,4 +159,25 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+#para los roles y permisos 
+REST_FRAMEWORK = {
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
+#para usar el modelo usuario por defecto
+AUTH_USER_MODEL = 'usuario.Usuario'
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=12),  # Esto hará que el token expire en 1 hora
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),  # Esto hará que el refresh token expire en 7 días
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+}
 

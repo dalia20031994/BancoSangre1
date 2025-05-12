@@ -1,14 +1,10 @@
-
 import { useNavigate } from 'react-router-dom'; 
 export function PaginaPrincipal() {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Es el encabezado que contiene la direccion*/}
-      <div className="bg-teal-700 text-white p-2 text-center text-sm">
-        Dirección: 68000, C. de Los Libres 406-a, 68000 Centro, Oax.
-      </div>
-      {/* Barra de navegación para iniciar sesión y donde sale el logo del banco */}
+      
+      {/* barra de navegación para iniciar sesión  */}
       <div className="bg-white flex justify-between items-center p-4 shadow-md">
         <div className="flex items-center gap-4">
           <img src="/logo.png" alt="Logo" className="h-12" />
@@ -17,12 +13,12 @@ export function PaginaPrincipal() {
             <p className="text-[16px]  text-gray-600 font-bold">Angeles</p>
            </div>
         </div>
-        <button onClick={() => navigate('/Inicio/Login')} className="rounded-full px-6 py-2 text-sm bg-teal-700 text-white hover:bg-teal-800">
+        <button onClick={() => navigate('/Login')} className="rounded-full px-6 py-2 text-sm bg-teal-700 text-white hover:bg-teal-800">
           Ingresar
         </button>
       </div>
 
-      {/* Contenido principal */}
+      {/* contenido principal */}
       <div className="relative">
         <img src="/doctor.png"
   alt="Doctor"
@@ -44,6 +40,9 @@ export function PaginaPrincipal() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="bg-teal-700 text-white p-2 text-center text-sm">
+        Dirección: 68000, C. de Los Libres 406-a, 68000 Centro, Oax.
       </div>
     </div>
   );
