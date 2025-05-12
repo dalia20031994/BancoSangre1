@@ -42,3 +42,4 @@ urlpatterns = [
     #agregado por dalia para obtener el usuario logado
     path('api/', include('usuario.api.urls')),
 ]
+

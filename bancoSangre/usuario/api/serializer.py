@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from usuario.models import Usuario
 import re
+import re
 
 class UsuarioSerializer(serializers.ModelSerializer):
     
