@@ -2,7 +2,6 @@ from rest_framework import viewsets
 from rest_framework.permissions import AllowAny, IsAdminUser
 from usuario.models import Usuario
 from usuario.api.serializer import UsuarioSerializer
-
 #Agregado por dalia para obtener los datos del usuario logeado
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
@@ -21,6 +20,8 @@ class UsuarioViewSet(viewsets.ModelViewSet):
             return [AllowAny()]  # Permite que cualquiera cree un usuario
         elif self.action == 'list':  # Permitir GET para ver todos los usuarios
             return [AllowAny()]  # Permite que cualquiera vea los usuarios
+        elif self.action == 'retrieve':  # Permitir GET para ver un usuario específico
+            return [AllowAny()]  # Permite que cualquiera vea un usuario específico
         return [IsAdminUser()]  # Requiere ser admin para los demás métodos (update, destroy, etc.) <
 
 #para el usuario logeado

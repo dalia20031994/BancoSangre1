@@ -16,6 +16,6 @@ class IsDonadorCreateReadOnly(BasePermission):
     Solo los administradores (is_staff) pueden hacer PUT, PATCH, DELETE.
     """
     def has_permission(self, request, view):
-        if request.method in SAFE_METHODS or request.method == 'POST':
-            return True
+        if request.method in SAFE_METHODS or request.method in ['POST', 'PUT', 'PATCH']:
+            return request.user and request.user.is_authenticated
         return request.user and request.user.is_staff

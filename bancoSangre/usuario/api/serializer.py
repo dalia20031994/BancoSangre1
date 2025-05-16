@@ -25,6 +25,10 @@ class UsuarioSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
             "La contraseña debe contener al menos una letra mayúscula."
         )
+        if not re.search(r'[a-z]', value):
+            raise serializers.ValidationError(
+            "La contraseña debe contener al menos una letra mayúscula."
+        )
         if not re.search(r'\d', value):
             raise serializers.ValidationError(
             "La contraseña debe contener al menos un número."

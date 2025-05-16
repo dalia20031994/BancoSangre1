@@ -1,4 +1,3 @@
-/*Incompleto sieve para editar perdiñ*/
 import { useParams, useNavigate } from 'react-router-dom';
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../auth/AuthContext';
@@ -30,10 +29,17 @@ const EditarPerfil = () => {
         const res = await axios.get('http://127.0.0.1:8000/api/usuario-autenticado/', {
           headers: { Authorization: `Bearer ${token}` },
         });
-        
-        const usuarioRes = await axios.get(`http://localhost:8000/api/usuarios/${res.data.id}/`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+
+        let usuarioRes;
+        if (nombreRol === 'admin') {
+          usuarioRes = await axios.get(`http://localhost:8000/api/usuarios/${res.data.id}/`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+        } else {
+          usuarioRes = await axios.get(`http://localhost:8000/api/usuarios/${res.data.id}/`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+        }
         
         setUsuario({
           nombre_usuario: usuarioRes.data.nombre_usuario || '',
@@ -51,7 +57,7 @@ const EditarPerfil = () => {
     };
 
     obtenerDatosUsuario();
-  }, [token]);
+  }, [token, nombreRol]);
 
   // Validar formulario cada vez que cambien los datos del usuario
   useEffect(() => {
@@ -131,16 +137,16 @@ const EditarPerfil = () => {
       };
 
       // Enviar actualización
-      await axios.patch(
-        `http://localhost:8000/api/usuarios/${authRes.data.id}/`,
-        datosActualizacion,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json'
-          },
-        }
-      );
+      const url = nombreRol === 'donador' 
+        ? `http://localhost:8000/api/donador/usuarios/${authRes.data.id}/`
+        : `http://localhost:8000/api/usuarios/${authRes.data.id}/`;
+
+      await axios.patch(url, datosActualizacion, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+      });
       
       setModalVisible(true);
     } catch (err) {
@@ -164,16 +170,7 @@ const EditarPerfil = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header estilo banco */}
-      <div className="bg-white flex justify-between items-center p-4 shadow-md">
-        <div className="flex items-center gap-4">
-          <img src="/logo.png" alt="Logo" className="h-12" />
-          <div className="text-center">
-            <h1 className="text-lg font-bold text-teal-700 leading-tight">Banco de Sangre</h1>
-            <p className="text-[16px] text-gray-600 font-bold">Angeles</p>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Formulario */}
       <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
@@ -325,12 +322,6 @@ const EditarPerfil = () => {
           </div>
         </div>
       )}
-
-      {/* Footer */}
-      <footer className="bg-teal-700 text-white p-4 mt-8 text-center">
-        <p>Dirección: 68000, C. de Los Libres 406-a, 68000 Centro, Oax.</p>
-        <p>&copy; 2025 Banco de Sangre Ángeles | Todos los derechos reservados.</p>
-      </footer>
     </div>
   );
 };

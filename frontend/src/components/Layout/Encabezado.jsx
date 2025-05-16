@@ -10,13 +10,12 @@ const Encabezado = () => {
   const { token, logout } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [nombreUsuario, setNombreUsuario] = useState('');
+  const [rolUsuario, setRolUsuario] = useState('');
   const navigate = useNavigate();
-
   // obtener datos del usuario al cargar el componente
   useEffect(() => {
     const fetchUsuarioAutenticado = async () => {
       if (!token) return;
-      
       try {
         const res = await axios.get('http://127.0.0.1:8000/api/usuario-autenticado/', {
           headers: {
@@ -29,6 +28,7 @@ const Encabezado = () => {
 
         if (rol === nombreRol.toLowerCase()) {
           setNombreUsuario(usuario);
+          setRolUsuario(rol);
         }
       } catch (error) {
         console.error('Error al obtener el usuario autenticado:', error);
@@ -111,20 +111,26 @@ const Encabezado = () => {
 
                 {isMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                    <Link
-                      to={`/${nombreRol}/editar-perfil`}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Editar perfil
-                    </Link>
-                    <button
-                      onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Cerrar sesión
-                    </button>
-                  </div>
+          <Link
+            to={
+              rolUsuario === 'donador' 
+                ? `/${nombreRol}/editar-perfil-donador` 
+                : rolUsuario === 'administrador' 
+                  ? `/${nombreRol}/editar-perfil-usuario`
+                  : `/${nombreRol}/editar-perfil-usuario`
+            }
+            onClick={() => setIsMenuOpen(false)}
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >
+            Editar perfil
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >
+            Cerrar sesión
+          </button>
+        </div>
                 )}
               </div>
             )}

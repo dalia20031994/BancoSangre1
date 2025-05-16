@@ -10,6 +10,7 @@ import Encabezado from '../components/Layout/Encabezado';
 import { Donadores } from '../pages/Donadores';
 import { Citas } from '../pages/Citas';
 import EditarPerfil from '../pages/EditarPerfil';
+import EditarPerfilDonador from '../pages/EditarPerfilDonador';
 
 export function Rutas() {
   const { token } = useContext(AuthContext);
@@ -27,7 +28,8 @@ export function Rutas() {
         <Route path="inicio" element={<Inicio />} />
         <Route path="donador" element={<Donadores />} />
         <Route path="citas" element={<Citas />} />      
-        <Route path="editar-perfil" element={<EditarPerfil />} />  
+        <Route path="editar-perfil-donador" element={<EditarPerfilDonador />} />  
+        <Route path="editar-perfil-usuario" element={<EditarPerfil />} />  
         <Route index element={<Navigate to="inicio" />} />
       </Route>
       {/* para url no registradas regresa al login */}

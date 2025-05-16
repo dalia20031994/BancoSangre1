@@ -2,8 +2,8 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import Footer from "../components/Layout/Footer";
-import RegistroDonador from "../components/RegistroDonador/RegistroDonador";
-import RegistroDireccion from "../components/registroDireccion/RegistroDireccion";
+import RegistroDonador from "../components/Donador/RegistroDonador";
+import RegistroDireccion from "../components/Direccion/RegistrarDireccion/RegistroDireccion";
 import { AuthContext } from '../auth/AuthContext';
 import axios from 'axios';
 

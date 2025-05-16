@@ -9,7 +9,7 @@ export default function Registro() {
     sexo: "M",
     password: "",
     confirmPassword: "", // Nuevo campo para confirmar la contraseña
-    rol: 3
+    rol: 2
   });
 
   const [errores, setErrores] = useState({});
@@ -180,7 +180,7 @@ export default function Registro() {
             disabled={!isPasswordEnabled}
           />
            <p className="text-red-500 text-sm mt-1">
-      La contraseña debe tener entre 8 y 15 caracterés, incluir al menos una letra mayúscula, un número, un símbolo especial (@#$%^&+=!?*-) 
+      La contraseña debe tener entre 8 y 15 caracterés, incluir al menos una letra mayúscula,una minuscula, un número, un símbolo especial (@#$%^&+=!?*-) 
     </p>
           {errores.password && <ErrorMessage message={errores.password[0]} />}
         </div>
@@ -220,10 +220,10 @@ export default function Registro() {
         <div
           className="fixed inset-0 bg-gray-700 bg-opacity-50 flex justify-center items-center"
           style={{
-            backgroundImage: "url(sangre2.jpg)", // Cambia esta ruta por la ubicación de tu imagen
-            backgroundSize: "cover", // Esto hará que la imagen cubra todo el área
-            backgroundPosition: "center", // Centra la imagen
-            backgroundAttachment: "fixed" // Para que la imagen no se mueva cuando se haga scroll (opcional)
+            backgroundImage: "url(sangre2.jpg)", 
+            backgroundSize: "cover", 
+            backgroundPosition: "center", 
+            backgroundAttachment: "fixed"
           }}
         >
           <div className="bg-white p-6 rounded shadow-lg max-w-sm w-full text-center">
