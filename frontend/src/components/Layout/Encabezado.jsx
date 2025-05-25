@@ -8,10 +8,12 @@ import axios from 'axios';
 const Encabezado = () => {
   const { nombreRol } = useParams();
   const { token, logout } = useContext(AuthContext);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Estado para manejar menús desplegables: donador y usuario
+  const [isMenuOpen, setIsMenuOpen] = useState({ donador: false, usuario: false });
   const [nombreUsuario, setNombreUsuario] = useState('');
   const [rolUsuario, setRolUsuario] = useState('');
   const navigate = useNavigate();
+
   // obtener datos del usuario al cargar el componente
   useEffect(() => {
     const fetchUsuarioAutenticado = async () => {
@@ -57,7 +59,7 @@ const Encabezado = () => {
 
   const handleLogout = () => {
     logout();
-    setIsMenuOpen(false);
+    setIsMenuOpen({ donador: false, usuario: false });
     // dirigir al login y reemplazar el historial para no poder volver atrás cuando se cierra sesion
     navigate('/login', { replace: true });
   };
@@ -84,12 +86,41 @@ const Encabezado = () => {
               >
                 Inicio
               </Link>
-              <Link 
-                to={`/${nombreRol}/donador`}
-                className="text-gray-700 hover:text-teal-600 font-medium transition-colors"
-              >
-                Donador
-              </Link>
+
+              {/* Donador con submenú que se abre con clic */}
+               {rolUsuario === 'admin' && (
+    <div className="relative">
+      <button
+        onClick={() => setIsMenuOpen(prev => ({
+          donador: !prev.donador,
+          usuario: false
+        }))}
+        className="text-gray-700 hover:text-teal-600 font-medium transition-colors"
+      >
+        Donadores
+      </button>
+
+      {isMenuOpen.donador && (
+        <div className="absolute bg-white shadow-md rounded-md mt-2 py-2 z-50 w-48">
+          <Link
+            to={`/${nombreRol}/Mapa-Donadores`}
+            onClick={() => setIsMenuOpen({ donador: false, usuario: false })}
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >
+            Mapa de donadores
+          </Link>
+          <Link
+            to={`/${nombreRol}/Donadores`}
+            onClick={() => setIsMenuOpen({ donador: false, usuario: false })}
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >
+            Administrar donadores
+          </Link>
+        </div>
+      )}
+    </div>
+  )}
+
               <Link 
                 to={`/${nombreRol}/citas`}
                 className="text-gray-700 hover:text-teal-600 font-medium transition-colors"
@@ -102,35 +133,36 @@ const Encabezado = () => {
             {token && (
               <div className="relative ml-4">
                 <button 
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  onClick={() => setIsMenuOpen(prev => ({
+                    usuario: !prev.usuario,
+                    donador: false
+                  }))}
                   className={`flex items-center justify-center w-10 h-10 rounded-full ${avatarColor} text-white font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500`}
                   aria-label="Menú de usuario"
                 >
                   {userInitial}
                 </button>
 
-                {isMenuOpen && (
+                {isMenuOpen.usuario && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-          <Link
-            to={
-              rolUsuario === 'donador' 
-                ? `/${nombreRol}/editar-perfil-donador` 
-                : rolUsuario === 'administrador' 
-                  ? `/${nombreRol}/editar-perfil-usuario`
-                  : `/${nombreRol}/editar-perfil-usuario`
-            }
-            onClick={() => setIsMenuOpen(false)}
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          >
-            Editar perfil
-          </Link>
-          <button
-            onClick={handleLogout}
-            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          >
-            Cerrar sesión
-          </button>
-        </div>
+                    <Link
+                      to={
+                        rolUsuario === 'donador' 
+                          ? `/${nombreRol}/editar-perfil-donador` 
+                          : `/${nombreRol}/editar-perfil-usuario`
+                      }
+                      onClick={() => setIsMenuOpen({ donador: false, usuario: false })}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Editar perfil
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Cerrar sesión
+                    </button>
+                  </div>
                 )}
               </div>
             )}

@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from usuario.models import Usuario
 import re
-import re
 
 class UsuarioSerializer(serializers.ModelSerializer):
     
@@ -53,3 +52,27 @@ class UsuarioSerializer(serializers.ModelSerializer):
             user.set_password(password)  # Encripta la contraseña antes de guardarla
         user.save()
         return user
+    def update(self, instance, validated_data):
+        password = validated_data.pop('password', None)
+        # 'rol' es un ForeignKey, así que no lo sacamos con pop.
+        # PERO, si estás enviando 'groups' o 'user_permissions', sí debes sacarlos:
+        groups_data = validated_data.pop('groups', None) # Extraer datos de grupos
+        user_permissions_data = validated_data.pop('user_permissions', None) # Extraer datos de permisos de usuario
+
+        # Actualiza los campos simples (incluido 'rol' ya que es ForeignKey)
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+
+        # Maneja la contraseña por separado
+        if password:
+            instance.set_password(password)
+
+        instance.save() # Guarda la instancia principal ANTES de actualizar relaciones M2M
+
+        # Maneja las relaciones ManyToMany DESPUÉS de que el usuario ha sido guardado
+        if groups_data is not None:
+            instance.groups.set(groups_data)
+        if user_permissions_data is not None:
+            instance.user_permissions.set(user_permissions_data)
+
+        return instance

@@ -112,7 +112,6 @@ const CompletarRegistro = () => {
       throw error;
     }
   };
-
   // para verificar si unas coordenadas ya existen
   const verificarCoordenadasExistentes = async (latitud, longitud) => {
     try {
@@ -128,7 +127,6 @@ const CompletarRegistro = () => {
       throw error;
     }
   };
-
   // para crear nuevas coordenadas
   const crearCoordenadas = async (latitud, longitud) => {
     try {
@@ -579,5 +577,4 @@ const CompletarRegistro = () => {
     </div>
   );
 };
-
 export default CompletarRegistro; 

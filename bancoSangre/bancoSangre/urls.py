@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from donador.api.views_mapa import donadores_para_mapa  # Asegúrate de importar
 
 from usuario.api.views import UsuarioViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
@@ -25,6 +26,7 @@ router = DefaultRouter()
 router.register('usuarios', UsuarioViewSet, basename='usuario')
 
 urlpatterns = [
+    path('api/mapa/donadores/', donadores_para_mapa),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 

@@ -7,11 +7,12 @@ import { useContext } from 'react';
 import { AuthContext } from '../auth/AuthContext';
 import Registro from "../pages/Registro";
 import Encabezado from '../components/Layout/Encabezado';
-import { Donadores } from '../pages/Donadores';
+import MapaDonadores from '../pages/MapaDonadores';
 import { Citas } from '../pages/Citas';
 import EditarPerfil from '../pages/EditarPerfil';
 import EditarPerfilDonador from '../pages/EditarPerfilDonador';
-
+import DonadoresList from '../pages/Donadores';
+import EditarDonador from '../pages/EditarDonador';
 export function Rutas() {
   const { token } = useContext(AuthContext);
   return (   
@@ -26,7 +27,9 @@ export function Rutas() {
       <Route path="/:nombreRol" element={token ? <Encabezado /> : <Navigate to="/login" />}>
         {/* Sub-rutas del menu*/}
         <Route path="inicio" element={<Inicio />} />
-        <Route path="donador" element={<Donadores />} />
+        <Route path="Mapa-Donadores" element={<MapaDonadores />} />
+        <Route path="Donadores" element={<DonadoresList />} />
+        <Route path="donadores/editar/:id" element={<EditarDonador />} />
         <Route path="citas" element={<Citas />} />      
         <Route path="editar-perfil-donador" element={<EditarPerfilDonador />} />  
         <Route path="editar-perfil-usuario" element={<EditarPerfil />} />  

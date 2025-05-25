@@ -3,6 +3,11 @@ from rest_framework import serializers
 from donador.models import Donador
 from usuario.models import Usuario  
 
+#incluido por d
+from direccion.models import Direccion
+from coordenada.models import Coordenada
+from colonia.models import Colonia
+
 class DonadorSerializer(serializers.ModelSerializer):
     #solo se daran de lata los que tengan el rol 2: donador
     usuario = serializers.PrimaryKeyRelatedField(
@@ -42,3 +47,23 @@ class DonadorSerializer(serializers.ModelSerializer):
         if value and not re.match(r'^\d{10}$', value):
             raise serializers.ValidationError("El segundo teléfono debe contener exactamente 10 dígitos si se proporciona.")
         return value
+class DonadorMapaSerializer(serializers.ModelSerializer):
+    direccion = serializers.SerializerMethodField()
+    sexo = serializers.CharField(source='usuario.sexo')
+
+    class Meta:
+        model = Donador
+        fields = ['id', 'nombre', 'apellidoP','apellidoM', 'edad', 'tipoSangre', 
+                 'peso', 'telefonoUno', 'primeraDonacion','ultimaDonacion', 'direccion', 'sexo']
+
+    def get_direccion(self, obj):
+        direccion = obj.direccion
+        return {
+            'calle': direccion.calle,
+            'numExterior': direccion.numExterior,
+            'numInterior': direccion.numInterior,
+            'coordenadas': {
+                'latitud': direccion.coordenadas.latitud,
+                'longitud': direccion.coordenadas.longitud
+            }
+        }
