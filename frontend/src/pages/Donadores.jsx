@@ -6,13 +6,14 @@ import { AuthContext } from '../auth/AuthContext';
 import { ModalConfirmacion } from '../components/Donador/Modal/ModalEliminacion';
 import { FiltrosDonadores } from '../components/Donador/Filtros/DonadorFiltroGeneral';
 import { DonadorItem } from '../components/Donador/Filtros/Tablero';
+import { ListaDonadoresPaginada } from '../components/Donador/Filtros/Paginacion';
 
 export default function DonadoresList() {
   const { nombreRol } = useParams();
   const { token } = useContext(AuthContext);
   const navigate = useNavigate();
   const [donadores, setDonadores] = useState([]);
-  const [usuarios, setUsuarios] = useState([]); // <---- Estado usuarios
+  const [usuarios, setUsuarios] = useState([]);
   const [filtros, setFiltros] = useState({
     estado: '',
     tipoSangre: '',
@@ -27,10 +28,10 @@ export default function DonadoresList() {
     axios.get('http://localhost:8000/api/usuarios/', {
       headers: { Authorization: `Bearer ${token}` }
     })
-    .then(res => {
-      setUsuarios(res.data);
-    })
-    .catch(err => console.error('Error al cargar usuarios:', err));
+      .then(res => {
+        setUsuarios(res.data);
+      })
+      .catch(err => console.error('Error al cargar usuarios:', err));
   }, [token]);
   useEffect(() => {
     if (!token) return;
@@ -65,11 +66,11 @@ export default function DonadoresList() {
       headers: { Authorization: `Bearer ${token}` },
       params: params,
     })
-    .then(res => {
-      const lista = Array.isArray(res.data) ? res.data : res.data.results || [];
-      setDonadores(lista);
-    })
-    .catch(err => console.error('Error al cargar donadores:', err));
+      .then(res => {
+        const lista = Array.isArray(res.data) ? res.data : res.data.results || [];
+        setDonadores(lista);
+      })
+      .catch(err => console.error('Error al cargar donadores:', err));
   }, [filtros, token]);
 
   const handleEditar = (id) => {
@@ -85,16 +86,16 @@ export default function DonadoresList() {
     axios.delete(`http://localhost:8000/api/donador/${idEliminar}/`, {
       headers: { Authorization: `Bearer ${token}` },
     })
-    .then(() => {
-      setDonadores(prev => prev.filter(d => d.id !== idEliminar));
-      setMostrarModal(false);
-      setIdEliminar(null);
-    })
-    .catch(err => {
-      console.error('Error al eliminar donador:', err);
-      alert('No se pudo eliminar el donador.');
-      setMostrarModal(false);
-    });
+      .then(() => {
+        setDonadores(prev => prev.filter(d => d.id !== idEliminar));
+        setMostrarModal(false);
+        setIdEliminar(null);
+      })
+      .catch(err => {
+        console.error('Error al eliminar donador:', err);
+        alert('No se pudo eliminar el donador.');
+        setMostrarModal(false);
+      });
   };
 
   const cancelarEliminacion = () => {
@@ -112,21 +113,21 @@ export default function DonadoresList() {
   };
 
   const handleToggleEstado = (id, estadoActual) => {
-    axios.patch(`http://localhost:8000/api/donador/${id}/`, 
-      { estado: !estadoActual }, 
+    axios.patch(`http://localhost:8000/api/donador/${id}/`,
+      { estado: !estadoActual },
       { headers: { Authorization: `Bearer ${token}` } }
     )
-    .then(() => {
-      setDonadores(prev =>
-        prev.map(donador =>
-          donador.id === id ? { ...donador, estado: !estadoActual } : donador
-        )
-      );
-    })
-    .catch(err => {
-      console.error('Error al cambiar estado:', err);
-      alert('No se pudo cambiar el estado del donador.');
-    });
+      .then(() => {
+        setDonadores(prev =>
+          prev.map(donador =>
+            donador.id === id ? { ...donador, estado: !estadoActual } : donador
+          )
+        );
+      })
+      .catch(err => {
+        console.error('Error al cambiar estado:', err);
+        alert('No se pudo cambiar el estado del donador.');
+      });
   };
 
   return (
@@ -140,24 +141,20 @@ export default function DonadoresList() {
           onLimpiar={limpiarFiltros}
         />
 
-        <div className="space-y-4">
-          {donadores.length > 0 ? (
-            donadores.map(donador => (
-              <DonadorItem
-                key={donador.id}
-                donador={donador}
-                usuarios={usuarios}  
-                onEditar={handleEditar}
-                onEliminar={handleEliminar}
-                onToggleEstado={handleToggleEstado}
-              />
-            ))
-          ) : (
-            <div className="bg-white p-6 rounded-xl shadow text-center text-gray-500">
-              No se encontraron donadores con los filtros seleccionados.
-            </div>
-          )}
-        </div>
+        {donadores.length > 0 ? (
+          <ListaDonadoresPaginada
+            donadores={donadores}
+            usuarios={usuarios}
+            onEditar={handleEditar}
+            onEliminar={handleEliminar}
+            onToggleEstado={handleToggleEstado}
+          />
+        ) : (
+          <div className="bg-white p-6 rounded-xl shadow text-center text-gray-500">
+            No se encontraron donadores con los filtros seleccionados.
+          </div>
+        )}
+
 
         <ModalConfirmacion
           visible={mostrarModal}

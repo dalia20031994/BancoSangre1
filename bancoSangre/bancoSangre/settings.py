@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'coordenada',
     'direccion',
     'donador',
+    'cita',
 ]
 
 

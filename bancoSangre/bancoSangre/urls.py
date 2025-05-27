@@ -43,5 +43,8 @@ urlpatterns = [
     path('api/donador/', include('donador.api.urls')),
     #agregado por dalia para obtener el usuario logado
     path('api/', include('usuario.api.urls')),
+     path('api/cita/', include('cita.api.urls')),
+     path('api/cita/', include('cita.api.urls')),
+
 ]
 

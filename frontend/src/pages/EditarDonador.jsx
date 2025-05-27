@@ -3,8 +3,8 @@ import React, { useState, useRef, useEffect, useContext } from "react";
 import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import ConfirmarModal from '../components/CompartidosPerfil/ConfirmarModal';
 import MensajeExito from '../components/CompartidosPerfil/MensajeExito';
-import Indicador from '../components/CompartidosPerfil/Indicador'; 
-import Resumen from '../components/CompartidosPerfil/Resumen'; 
+import Indicador from '../components/CompartidosPerfil/Indicador';
+import Resumen from '../components/CompartidosPerfil/Resumen';
 import EdicionUsuario from '../components/CompartidosPerfil/EdicionUsuario';
 import EdicionDonador from '../components/CompartidosPerfil/EdicionDonador';
 import EdicionDireccion from '../components/CompartidosPerfil/EdicionDireccion';
@@ -16,6 +16,8 @@ import { AuthContext } from "../auth/AuthContext";
 const EditarDonador = () => {
   const { id } = useParams();
   const { token } = useContext(AuthContext);
+  const { token2 } = useContext(AuthContext);
+  const { nombreRol2 } = useParams();
   const navigate = useNavigate();
   const [mensaje, setMensaje] = useState({ texto: '', tipo: '' });
   const [usuarioValido, setUsuarioValido] = useState(false);
@@ -24,6 +26,31 @@ const EditarDonador = () => {
   const [direccionModificada, setDireccionModificada] = useState(false);
   const [datosDireccion, setDatosDireccion] = useState(null);
   const direccionRef = useRef();
+      useEffect(() => {
+    const fetchUsuarioAutenticado = async () => {
+      if (!token2) return;
+      try {
+        const res = await axios.get('http://127.0.0.1:8000/api/usuario-autenticado/', {
+          headers: {
+            Authorization: `Bearer ${token2}`,
+          },
+        });
+
+        const rol = res.data.rol?.toLowerCase();
+        const usuario = res.data.nombre_usuario;
+
+        if (rol === nombreRol2.toLowerCase()) {
+          setNombreUsuario(usuario);
+          setRolUsuario(rol);
+        }
+      } catch (error) {
+        console.error('Error al obtener el usuario autenticado:', error);
+      }
+    };
+
+    fetchUsuarioAutenticado();
+  }, [token2, nombreRol2]);
+
   const {
     esValidoRol,
     idDonador,
@@ -52,7 +79,7 @@ const EditarDonador = () => {
     },
     token
   );
-  
+
   const {
     paso,
     siguientePaso,
@@ -88,17 +115,17 @@ const EditarDonador = () => {
           isProcessing={actualizacionEnProgreso}
         />
       )}
-      
+
       {/* Contenido principal del formulario */}
       <div className="flex flex-col items-center justify-center my-4">
         <div className="text-xl font-semibold mb-4 text-center">
           Editar Perfil de Donador {id}
         </div>
-        
+
         {/* Indicador de pasos */}
-        <Indicador currentStep={paso} totalSteps={4} /> 
+        <Indicador currentStep={paso} totalSteps={4} />
         <MensajeExito message={mensaje} />
-        
+
         {/* Contenido de cada paso */}
         <div className="w-full max-w-3xl p-4 bg-white shadow-lg rounded-lg overflow-auto">
           <div className="h-120 overflow-auto">
@@ -110,7 +137,7 @@ const EditarDonador = () => {
                 modoEdicionExterna={true} // Indica que es edición de otro usuario
               />
             )}
-            
+
             {paso === 2 && (
               <EdicionDonador
                 datosDonador={datosDonador}
@@ -118,7 +145,7 @@ const EditarDonador = () => {
                 setFormularioValido={setFormularioDonadorValido}
               />
             )}
-            
+
             {paso === 3 && (
               <EdicionDireccion
                 direccionRef={direccionRef}
@@ -129,7 +156,7 @@ const EditarDonador = () => {
                 datosDireccionOriginales={datosDireccionOriginales}
               />
             )}
-            
+
             {paso === 4 && (
               <Resumen
                 datosUsuario={datosUsuario}
@@ -138,7 +165,7 @@ const EditarDonador = () => {
               />
             )}
           </div>
-          
+
           {/* botones de navegación */}
           <div className="flex justify-center mt-4 space-x-4">
             {paso > 1 && (
@@ -149,11 +176,17 @@ const EditarDonador = () => {
                 Regresar
               </button>
             )}
-            
+            <button
+              onClick={() => navigate(`/${nombreRol2}/Donadores`)}
+              className="px-4 py-2 bg-red-300 text-white hover:bg-red-400"
+            >
+              Cancelar
+            </button>
+
             {paso < 4 ? (
               <button
                 onClick={siguientePaso}
-                className={`px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600`}
+                className={`px-4 py-2 bg-blue-400 text-white hover:bg-blue-400`}
               >
                 Siguiente
               </button>
