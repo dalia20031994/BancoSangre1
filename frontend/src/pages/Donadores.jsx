@@ -1,60 +1,167 @@
-/*actualmente no funcional no agregar al reporte */
-
-import { useParams, Navigate } from 'react-router-dom';
+//lista de donadores
+import { useParams, useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../auth/AuthContext';
 import axios from 'axios';
+import { AuthContext } from '../auth/AuthContext';
+import { ModalConfirmacion } from '../components/Donador/Modal/ModalEliminacion';
+import { FiltrosDonadores } from '../components/Donador/Filtros/DonadorFiltroGeneral';
+import { DonadorItem } from '../components/Donador/Filtros/Tablero';
+import { ListaDonadoresPaginada } from '../components/Donador/Filtros/Paginacion';
 
-export function Donadores() {
+export default function DonadoresList() {
+  const { nombreRol } = useParams();
   const { token } = useContext(AuthContext);
-  const { nombreRol } = useParams(); // <-- ahora usamos el rol
-  const [esValido, setEsValido] = useState(null);
-  const [nombreUsuario, setNombreUsuario] = useState('');
+  const navigate = useNavigate();
+  const [donadores, setDonadores] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
+  const [filtros, setFiltros] = useState({
+    estado: '',
+    tipoSangre: '',
+    sexo: ''
+  });
+  const [idEliminar, setIdEliminar] = useState(null);
+  const [mostrarModal, setMostrarModal] = useState(false);
 
   useEffect(() => {
-    const fetchUsuarioAutenticado = async () => {
-      try {
-        const res = await axios.get('http://127.0.0.1:8000/api/usuario-autenticado/', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+    if (!token) return;
 
-        const rol = res.data.rol?.toLowerCase(); // Aseguramos consistencia
-        const usuario = res.data.nombre_usuario;
+    axios.get('http://localhost:8000/api/usuarios/', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(res => {
+        setUsuarios(res.data);
+      })
+      .catch(err => console.error('Error al cargar usuarios:', err));
+  }, [token]);
+  useEffect(() => {
+    if (!token) return;
 
-        if (rol === nombreRol.toLowerCase()) {
-          setNombreUsuario(usuario);
-          setEsValido(true);
-        } else {
-          setEsValido(false);
-        }
-      } catch (error) {
-        console.error('Error al obtener el usuario autenticado:', error);
-        setEsValido(false);
+    let estadoBool;
+    if (filtros.estado === '') {
+      estadoBool = undefined;
+    } else if (filtros.estado === 'Activo') {
+      estadoBool = true;
+    } else if (filtros.estado === 'Inactivo') {
+      estadoBool = false;
+    }
+
+    let sexoFiltrado = '';
+    if (filtros.sexo === 'Masculino') sexoFiltrado = 'M';
+    else if (filtros.sexo === 'Femenino') sexoFiltrado = 'F';
+
+    const params = { ...filtros, estado: estadoBool };
+
+    if (sexoFiltrado) {
+      params['usuario__sexo'] = sexoFiltrado;
+    }
+    delete params.sexo;
+
+    Object.keys(params).forEach(key => {
+      if (params[key] === undefined || params[key] === '') {
+        delete params[key];
       }
-    };
+    });
 
-    fetchUsuarioAutenticado();
-  }, [token, nombreRol]);
+    axios.get('http://localhost:8000/api/donador/', {
+      headers: { Authorization: `Bearer ${token}` },
+      params: params,
+    })
+      .then(res => {
+        const lista = Array.isArray(res.data) ? res.data : res.data.results || [];
+        setDonadores(lista);
+      })
+      .catch(err => console.error('Error al cargar donadores:', err));
+  }, [filtros, token]);
 
-  if (esValido === null) {
-    return <div className="text-center mt-10 text-lg text-gray-700">Cargando...</div>;
-  }
+  const handleEditar = (id) => {
+    navigate(`/${nombreRol}/donadores/editar/${id}`);
+  };
 
-  if (!esValido) {
-    return <Navigate to="/login" replace />;
-  }
+  const handleEliminar = (id) => {
+    setIdEliminar(id);
+    setMostrarModal(true);
+  };
+
+  const confirmarEliminacion = () => {
+    axios.delete(`http://localhost:8000/api/donador/${idEliminar}/`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then(() => {
+        setDonadores(prev => prev.filter(d => d.id !== idEliminar));
+        setMostrarModal(false);
+        setIdEliminar(null);
+      })
+      .catch(err => {
+        console.error('Error al eliminar donador:', err);
+        alert('No se pudo eliminar el donador.');
+        setMostrarModal(false);
+      });
+  };
+
+  const cancelarEliminacion = () => {
+    setMostrarModal(false);
+    setIdEliminar(null);
+  };
+
+  const handleFiltroChange = (e) => {
+    const { name, value } = e.target;
+    setFiltros(prev => ({ ...prev, [name]: value }));
+  };
+
+  const limpiarFiltros = () => {
+    setFiltros({ estado: '', tipoSangre: '', sexo: '' });
+  };
+
+  const handleToggleEstado = (id, estadoActual) => {
+    axios.patch(`http://localhost:8000/api/donador/${id}/`,
+      { estado: !estadoActual },
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+      .then(() => {
+        setDonadores(prev =>
+          prev.map(donador =>
+            donador.id === id ? { ...donador, estado: !estadoActual } : donador
+          )
+        );
+      })
+      .catch(err => {
+        console.error('Error al cambiar estado:', err);
+        alert('No se pudo cambiar el estado del donador.');
+      });
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white shadow-md rounded-lg p-8">
-        <h1 className="text-2xl font-bold text-teal-700 mb-4">
-          Bienvenido, {nombreUsuario}
-        </h1>
-        <p className="text-gray-600">Tu rol es: <strong>{nombreRol}</strong></p>
+    <div className="min-h-screen bg-gray-100 py-10 px-4 md:px-10">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">🩸 Donadores Registrados</h2>
+
+        <FiltrosDonadores
+          filtros={filtros}
+          onChange={handleFiltroChange}
+          onLimpiar={limpiarFiltros}
+        />
+
+        {donadores.length > 0 ? (
+          <ListaDonadoresPaginada
+            donadores={donadores}
+            usuarios={usuarios}
+            onEditar={handleEditar}
+            onEliminar={handleEliminar}
+            onToggleEstado={handleToggleEstado}
+          />
+        ) : (
+          <div className="bg-white p-6 rounded-xl shadow text-center text-gray-500">
+            No se encontraron donadores con los filtros seleccionados.
+          </div>
+        )}
+
+
+        <ModalConfirmacion
+          visible={mostrarModal}
+          onConfirmar={confirmarEliminacion}
+          onCancelar={cancelarEliminacion}
+        />
       </div>
     </div>
   );
 }
-

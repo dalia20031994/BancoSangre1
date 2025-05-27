@@ -33,7 +33,7 @@ const RegistroDonador = ({
         datosDonador={datosDonador}
         setDatosDonador={setDatosDonador}
         errores={errores}
-        setErrores={setErrores}
+        setErrores={setErrores}z
       />
     </div>
   );

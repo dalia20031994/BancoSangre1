@@ -19,3 +19,19 @@ class IsDonadorCreateReadOnly(BasePermission):
         if request.method in SAFE_METHODS or request.method in ['POST', 'PUT', 'PATCH']:
             return request.user and request.user.is_authenticated
         return request.user and request.user.is_staff
+class IsOwnerOrAdmin(BasePermission):
+    """
+    Permite el acceso solo si el usuario es el propietario del objeto o es un administrador.
+    """
+    def has_object_permission(self, request, view, obj):
+        # Permite el acceso de lectura a todos (ya cubierto por retrieve, list)
+        # Opcional: si quieres que PUT/PATCH/DELETE también sea ReadOnly para no-dueños
+        # if request.method in SAFE_METHODS:
+        #     return True
+
+        # Si el usuario es administrador, siempre permite
+        if request.user and request.user.is_staff:
+            return True
+
+        # Si no es administrador, solo permite si el usuario es el propietario del objeto
+        return obj == request.user

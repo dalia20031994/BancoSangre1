@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 import { ErrorMessage } from "../components/ErrorMessage";
-import { useNavigate } from "react-router-dom"; // Importamos useNavigate
-
+import { useNavigate } from "react-router-dom"; 
 export default function Registro() {
   const [usuario, setUsuario] = useState({
     nombre_usuario: "",
     correo: "",
     sexo: "M",
     password: "",
-    confirmPassword: "", // Nuevo campo para confirmar la contraseña
+    confirmPassword: "", 
     rol: 2
   });
-
   const [errores, setErrores] = useState({});
-  const [modalVisible, setModalVisible] = useState(false); // Nuevo estado para controlar la visibilidad de la modal
-  const navigate = useNavigate(); // hook para redirección
-
+  const [modalVisible, setModalVisible] = useState(false); 
+  const navigate = useNavigate(); 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Validación de campos
     const nuevosErrores = {};
     if (!usuario.nombre_usuario) {
       nuevosErrores.nombre_usuario = ["El nombre de usuario es obligatorio"];
@@ -36,13 +31,10 @@ export default function Registro() {
     if (!usuario.sexo) {
       nuevosErrores.sexo = ["El sexo es obligatorio"];
     }
-
-    // Si existen errores, no enviamos el formulario
     if (Object.keys(nuevosErrores).length > 0) {
       setErrores(nuevosErrores);
       return;
     }
-
     try {
       const res = await fetch("http://localhost:8000/api/usuarios/", {
         method: "POST",
@@ -52,18 +44,16 @@ export default function Registro() {
 
       if (!res.ok) {
         const errorData = await res.json();
-        setErrores(errorData); // Mostramos errores del backend
+        setErrores(errorData); 
         return;
       }
-
-      // Éxito: Mostrar la modal y esperar a que el usuario cierre
       setModalVisible(true);
       setUsuario({
         nombre_usuario: "",
         correo: "",
         sexo: "M",
         password: "",
-        confirmPassword: "", // Resetear confirmación de contraseña
+        confirmPassword: "", 
         rol: 3
       });
       setErrores({});
@@ -72,18 +62,14 @@ export default function Registro() {
       setErrores({ general: ["Error al conectar con el servidor."] });
     }
   };
-
   const handleModalClose = () => {
-    setModalVisible(false); // Cierra la modal
-    navigate("/Login"); // Redirige a /Login
+    setModalVisible(false); 
+    navigate("/Login"); 
   };
-
   const isCorreoEnabled = usuario.nombre_usuario.length > 0;
   const isSexoEnabled = usuario.correo.length > 0;
   const isPasswordEnabled = usuario.sexo.length > 0;
   const isConfirmPasswordEnabled = usuario.password.length > 0;
-
-  // Validar si el formulario está completo para habilitar el botón
   const isFormValid =
     usuario.nombre_usuario &&
     usuario.correo &&
@@ -91,10 +77,8 @@ export default function Registro() {
     usuario.confirmPassword &&
     usuario.password === usuario.confirmPassword &&
     usuario.sexo;
-
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header estilo banco */}
       <div className="bg-white flex justify-between items-center p-4 shadow-md">
         <div className="flex items-center gap-4">
           <img src="/logo.png" alt="Logo" className="h-12" />
@@ -104,7 +88,6 @@ export default function Registro() {
           </div>
         </div>
       </div>
-
       {/* Formulario */}
       <form
         onSubmit={handleSubmit}
@@ -114,15 +97,12 @@ export default function Registro() {
         <label className="block text-sm font-medium text-gray-700">
           <span className="text-red-500">* Campos obligatorios</span>
         </label>
-
         {errores.general && <ErrorMessage message={errores.general[0]} />}
-
         {/* Nombre de usuario */}
         <div>
           <label className="block text-sm font-medium text-green-900">
             Nombre corto<span className="text-red-500">*</span>
           </label>
-
           <input
             type="text"
             value={usuario.nombre_usuario}
@@ -132,7 +112,6 @@ export default function Registro() {
           />
           {errores.nombre_usuario && <ErrorMessage message={errores.nombre_usuario[0]} />}
         </div>
-
         {/* Correo (habilitado solo si el nombre está lleno) */}
         <div>
           <label className="block text-sm font-medium text-green-900">
@@ -148,7 +127,6 @@ export default function Registro() {
           />
           {errores.correo && <ErrorMessage message={errores.correo[0]} />}
         </div>
-
         {/* Sexo (habilitado solo si el correo está lleno) */}
         <div>
           <label className="block text-sm font-medium text-green-900">
@@ -165,7 +143,6 @@ export default function Registro() {
           </select>
           {errores.sexo && <ErrorMessage message={errores.sexo[0]} />}
         </div>
-
         {/* Contraseña (habilitado solo si el sexo está lleno) */}
         <div>
           <label className="block text-sm font-medium text-green-900">
@@ -179,12 +156,9 @@ export default function Registro() {
             required
             disabled={!isPasswordEnabled}
           />
-           <p className="text-red-500 text-sm mt-1">
-      La contraseña debe tener entre 8 y 15 caracterés, incluir al menos una letra mayúscula,una minuscula, un número, un símbolo especial (@#$%^&+=!?*-) 
-    </p>
+           <p className="text-red-500 text-sm mt-1">La contraseña debe tener entre 8 y 15 caracterés, incluir al menos una letra mayúscula,una minuscula, un número, un símbolo especial (@#$%^&+=!?*-) </p>
           {errores.password && <ErrorMessage message={errores.password[0]} />}
         </div>
-
         {/* Confirmar Contraseña (habilitado solo si la contraseña está llena) */}
         <div>
           <label className="block text-sm font-medium text-green-900">
@@ -200,7 +174,6 @@ export default function Registro() {
           />
           {errores.confirmPassword && <ErrorMessage message={errores.confirmPassword[0]} />}
         </div>
-
         {/* Botón */}
         <div className="text-center">
           <button
@@ -214,7 +187,6 @@ export default function Registro() {
           </button>
         </div>
       </form>
-
       {/* Modal de éxito */}
       {modalVisible && (
         <div
@@ -238,7 +210,6 @@ export default function Registro() {
           </div>
         </div>
       )}
-
       {/* Footer */}
       <footer className="bg-teal-700 text-white p-4 mt-8 text-center">
         <p>Dirección: 68000, C. de Los Libres 406-a, 68000 Centro, Oax.</p>

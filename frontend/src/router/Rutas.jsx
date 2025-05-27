@@ -7,11 +7,17 @@ import { useContext } from 'react';
 import { AuthContext } from '../auth/AuthContext';
 import Registro from "../pages/Registro";
 import Encabezado from '../components/Layout/Encabezado';
-import { Donadores } from '../pages/Donadores';
-import { Citas } from '../pages/Citas';
+import MapaDonadores from '../pages/MapaDonadores';
 import EditarPerfil from '../pages/EditarPerfil';
 import EditarPerfilDonador from '../pages/EditarPerfilDonador';
-
+import DonadoresList from '../pages/Donadores';
+import EditarDonador from '../pages/EditarDonador';
+import Citas from '../pages/Citas';
+import CitaProgramada from '../pages/CitaProgramada';
+import HistorialCitas from '../pages/MisCitas';
+import CitasAdmin from '../pages/HistorialCitas';
+import DonacionFAQ from '../pages/SeccionInformativa';
+import CitasInteligente from '../pages/ControladorCitas';
 export function Rutas() {
   const { token } = useContext(AuthContext);
   return (   
@@ -26,8 +32,14 @@ export function Rutas() {
       <Route path="/:nombreRol" element={token ? <Encabezado /> : <Navigate to="/login" />}>
         {/* Sub-rutas del menu*/}
         <Route path="inicio" element={<Inicio />} />
-        <Route path="donador" element={<Donadores />} />
-        <Route path="citas" element={<Citas />} />      
+        <Route path="Mapa-Donadores" element={<MapaDonadores />} />
+        <Route path="Donadores" element={<DonadoresList />} />
+        <Route path="Historial-Citas" element={<HistorialCitas />} />
+        <Route path="citas" element={<CitasInteligente />} />
+        <Route path="SeccionPreguntas" element={<DonacionFAQ />} />
+        <Route path="Cita-Programada" element={<CitaProgramada />} />
+        <Route path="donadores/editar/:id" element={<EditarDonador />} />
+        <Route path="Citas-Donadores" element={<CitasAdmin />} />
         <Route path="editar-perfil-donador" element={<EditarPerfilDonador />} />  
         <Route path="editar-perfil-usuario" element={<EditarPerfil />} />  
         <Route index element={<Navigate to="inicio" />} />

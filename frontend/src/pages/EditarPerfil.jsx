@@ -1,14 +1,14 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../auth/AuthContext';
-import axios from 'axios';
 import { ErrorMessage } from '../components/ErrorMessage';
+import { getAuthenticatedUser, getUserById, updateUserData } from '../api/usuarios.api';
 
 const EditarPerfil = () => {
   const { nombreRol } = useParams();
   const { token } = useContext(AuthContext);
   const navigate = useNavigate();
-  
+
   const [usuario, setUsuario] = useState({
     nombre_usuario: '',
     correo: '',
@@ -26,25 +26,13 @@ const EditarPerfil = () => {
   useEffect(() => {
     const obtenerDatosUsuario = async () => {
       try {
-        const res = await axios.get('http://127.0.0.1:8000/api/usuario-autenticado/', {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const authUser = await getAuthenticatedUser(token);
+        const userDetails = await getUserById(authUser.id, token);
 
-        let usuarioRes;
-        if (nombreRol === 'admin') {
-          usuarioRes = await axios.get(`http://localhost:8000/api/usuarios/${res.data.id}/`, {
-            headers: { Authorization: `Bearer ${token}` },
-          });
-        } else {
-          usuarioRes = await axios.get(`http://localhost:8000/api/usuarios/${res.data.id}/`, {
-            headers: { Authorization: `Bearer ${token}` },
-          });
-        }
-        
         setUsuario({
-          nombre_usuario: usuarioRes.data.nombre_usuario || '',
-          correo: usuarioRes.data.correo || '',
-          sexo: usuarioRes.data.sexo || '',
+          nombre_usuario: userDetails.nombre_usuario || '',
+          correo: userDetails.correo || '',
+          sexo: userDetails.sexo || '',
           password: '',
           password_confirmation: ''
         });
@@ -57,7 +45,7 @@ const EditarPerfil = () => {
     };
 
     obtenerDatosUsuario();
-  }, [token, nombreRol]);
+  }, [token]); // nombreRol is not needed here as the authenticated user's ID is fetched first
 
   // Validar formulario cada vez que cambien los datos del usuario
   useEffect(() => {
@@ -99,7 +87,7 @@ const EditarPerfil = () => {
       }
 
       setErrores(nuevosErrores);
-      setIsFormValid(valido);
+      setIsFormValid(Object.keys(nuevosErrores).length === 0); // Form is valid if there are no errors
     };
 
     validarFormulario();
@@ -117,18 +105,14 @@ const EditarPerfil = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!isFormValid) {
       return;
     }
 
     try {
-      // Obtener ID del usuario
-      const authRes = await axios.get('http://127.0.0.1:8000/api/usuario-autenticado/', {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const authRes = await getAuthenticatedUser(token);
 
-      // Preparar datos para enviar (solo enviar password si se está cambiando)
       const datosActualizacion = {
         nombre_usuario: usuario.nombre_usuario,
         correo: usuario.correo,
@@ -136,18 +120,8 @@ const EditarPerfil = () => {
         ...(usuario.password && { password: usuario.password })
       };
 
-      // Enviar actualización
-      const url = nombreRol === 'donador' 
-        ? `http://localhost:8000/api/donador/usuarios/${authRes.data.id}/`
-        : `http://localhost:8000/api/usuarios/${authRes.data.id}/`;
+      await updateUserData(authRes.id, datosActualizacion, token, nombreRol === 'donador');
 
-      await axios.patch(url, datosActualizacion, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        },
-      });
-      
       setModalVisible(true);
     } catch (err) {
       if (err.response?.data) {
@@ -170,14 +144,14 @@ const EditarPerfil = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      
+
 
       {/* Formulario */}
       <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-teal-700 mb-6 text-center">Editar Perfil</h2>
-        
+
         {errores.general && <ErrorMessage message={errores.general[0]} />}
-        
+
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Nombre de Usuario */}
           <div>
@@ -196,7 +170,7 @@ const EditarPerfil = () => {
             />
             {errores.nombre_usuario && <ErrorMessage message={errores.nombre_usuario[0]} />}
           </div>
-          
+
           {/* Correo Electrónico */}
           <div>
             <label className="block text-sm font-bold text-teal-700">
@@ -214,7 +188,7 @@ const EditarPerfil = () => {
             />
             {errores.correo && <ErrorMessage message={errores.correo[0]} />}
           </div>
-          
+
           {/* Sexo */}
           <div>
             <label className="block text-sm font-bold text-teal-700">
@@ -234,7 +208,7 @@ const EditarPerfil = () => {
             </select>
             {errores.sexo && <ErrorMessage message={errores.sexo[0]} />}
           </div>
-          
+
           {/* Contraseña */}
           <div>
             <label className="block text-sm font-bold text-teal-700">
@@ -257,7 +231,7 @@ const EditarPerfil = () => {
               </p>
             )}
           </div>
-          
+
           {/* Confirmar Contraseña */}
           <div>
             <label className="block text-sm font-bold text-teal-700">
@@ -275,7 +249,7 @@ const EditarPerfil = () => {
             />
             {errores.password_confirmation && <ErrorMessage message={errores.password_confirmation[0]} />}
           </div>
-          
+
           <div className="flex justify-between pt-4">
             <button
               type="button"
@@ -288,8 +262,8 @@ const EditarPerfil = () => {
               type="submit"
               disabled={!isFormValid}
               className={`px-4 py-2 rounded-md transition ${
-                isFormValid 
-                  ? 'bg-teal-600 text-white hover:bg-teal-700' 
+                isFormValid
+                  ? 'bg-teal-600 text-white hover:bg-teal-700'
                   : 'bg-gray-400 text-gray-700 cursor-not-allowed'
               }`}
             >

@@ -1,10 +1,11 @@
 from rest_framework import viewsets
-from rest_framework.permissions import AllowAny, IsAdminUser
+from rest_framework.permissions import AllowAny, IsAdminUser,IsAuthenticated
 from usuario.models import Usuario
 from usuario.api.serializer import UsuarioSerializer
 #Agregado por dalia para obtener los datos del usuario logeado
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
+from usuario.api.permissions import IsOwnerOrAdmin # <-- ESTO ESTÁ CORRECTO
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.response import Response
 
@@ -13,8 +14,6 @@ from rest_framework.response import Response
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
-    permission_classes = [AllowAny]
-
     def get_permissions(self):
         if self.action == 'create':  # Permitir POST para crear usuario
             return [AllowAny()]  # Permite que cualquiera cree un usuario
@@ -22,6 +21,8 @@ class UsuarioViewSet(viewsets.ModelViewSet):
             return [AllowAny()]  # Permite que cualquiera vea los usuarios
         elif self.action == 'retrieve':  # Permitir GET para ver un usuario específico
             return [AllowAny()]  # Permite que cualquiera vea un usuario específico
+        elif self.action in ['update', 'partial_update', 'destroy']:
+            return [IsAuthenticated(), IsOwnerOrAdmin()]
         return [IsAdminUser()]  # Requiere ser admin para los demás métodos (update, destroy, etc.) <
 
 #para el usuario logeado

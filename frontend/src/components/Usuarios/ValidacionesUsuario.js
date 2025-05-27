@@ -20,7 +20,7 @@ export const validarCampo = (name, value, datos, erroresActuales) => {
         );
       }
       if (value.length < 3) {
-        nuevosErrores[name].push("Debe tener al menos caracteres.");
+        nuevosErrores[name].push("Debe tener al menos 3 caracteres.");
       }
       break;
 
@@ -32,44 +32,59 @@ export const validarCampo = (name, value, datos, erroresActuales) => {
       break;
 
     case "sexo":
-      nuevosErrores[name] = [];
-      if (!["masculino", "femenino", "otro"].includes(value.toLowerCase())) {
+    nuevosErrores[name] = [];
+    // Ahora, verifica si el valor es 'M' o 'F' (en mayúsculas)
+    if (!["M", "F"].includes(value)) {
         nuevosErrores[name].push("Sexo no válido.");
-      }
-      break;
+    }
+    break;
 
     case "password":
-    case "password_confirmation":
-      nuevosErrores.password = [];
-      nuevosErrores.password_confirmation = [];
+case "password_confirmation":
+  nuevosErrores.password = [];
+  nuevosErrores.password_confirmation = [];
 
-      const pass1 = datos.password || "";
-      const pass2 = datos.password_confirmation || "";
+  const pass1 = datos.password || "";
+  const pass2 = datos.password_confirmation || "";
 
-      if (pass1) {
-        const passwordErrors = [
-          [pass1.length < 8 || pass1.length > 15, "Debe tener 8-15 caracteres"],
-          [!/[a-z]/.test(pass1), "Al menos una minúscula"],
-          [!/[A-Z]/.test(pass1), "Al menos una mayúscula"],
-          [!/[0-9]/.test(pass1), "Al menos un número"],
-          [!/[!@#$%^&*]/.test(pass1), "Al menos un símbolo (!@#$%^&*)"],
-        ]
-          .filter(([condition]) => condition)
-          .map(([_, msg]) => msg);
+  if (pass1) {
+    let errorMessage = "";
 
-        nuevosErrores.password.push(...passwordErrors);
-      }
+    if (pass1.length < 8 || pass1.length > 15) {
+      errorMessage += "La contraseña debe tener entre 8 y 15 caracteres. ";
+    }
+    if (!/[a-z]/.test(pass1)) {
+      errorMessage += "Debe contener al menos una letra minúscula. ";
+    }
+    if (!/[A-Z]/.test(pass1)) {
+      errorMessage += "Debe contener al menos una letra mayúscula. ";
+    }
+    if (!/[0-9]/.test(pass1)) {
+      errorMessage += "Debe contener al menos un número. ";
+    }
+    if (!/[!@#$%^&*]/.test(pass1)) {
+      errorMessage += "Debe contener al menos un símbolo (!@#$%^&*)";
+    }
 
-      if (pass2 && pass1 !== pass2) {
-        nuevosErrores.password_confirmation.push(
-          "Las contraseñas no coinciden."
-        );
-      }
-      break;
-
-    default:
-      nuevosErrores[name] = [];
+    if (errorMessage) {
+      nuevosErrores.password.push(errorMessage.trim());
+    }
   }
+
+  // Limpia errores previos de coincidencia
+  nuevosErrores.password_confirmation = [];
+
+  // Solo agrega error si ambas tienen valor y no coinciden
+  if (pass1 && pass2 && pass1 !== pass2) {
+    nuevosErrores.password_confirmation.push("Las contraseñas no coinciden.");
+  }
+
+  break;
+
+
+    default:
+      nuevosErrores[name] = [];
+  }
 
   return nuevosErrores;
 };
