@@ -1,6 +1,5 @@
 /*para el campo de texto de calle el formato y eso la vista  */
 import { CheckCircle } from "lucide-react";
-
 const CalleInput = ({ value, onChange, disabled, isValid }) => {
   return (
     <div>
@@ -26,5 +25,4 @@ const CalleInput = ({ value, onChange, disabled, isValid }) => {
     </div>
   );
 };
-
 export default CalleInput;

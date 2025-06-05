@@ -32,11 +32,9 @@ const MunicipioInput = ({
           />
         )}
       </div>
-
       {municipioTocado && errores.municipio && (
         <div className="text-red-600 text-sm mt-1">{errores.municipio}</div>
       )}
-
       {sugerencias.length > 0 && (
         <div className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
           {sugerencias.map((municipio, index) => (

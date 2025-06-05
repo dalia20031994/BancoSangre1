@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Heart, Info, AlertCircle, CalendarClock, ShieldCheck } from "lucide-react";
-
 const items = [
   {
     key: "requisitos",
@@ -66,7 +65,6 @@ const items = [
     ),
   },
 ];
-
 export default function DonacionFAQ() {
   const [openItem, setOpenItem] = useState(null);
 

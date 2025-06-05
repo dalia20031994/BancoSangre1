@@ -1,5 +1,5 @@
 import axios from 'axios';
-/*Permite generar al token al mandarle el correo y contraseña de un usuario registrado*/ 
+
 const API_BASE_URL = 'http://127.0.0.1:8000/api';
 
 export const loginRequest = (correo, password) => {
@@ -12,6 +12,8 @@ export const loginRequest = (correo, password) => {
      },
    });
  };
+
+// obtiene el usuario autenticado
 export const getAuthenticatedUser = async (token) => {
   const response = await axios.get(`${API_BASE_URL}/usuario-autenticado/`, {
     headers: { Authorization: `Bearer ${token}` },
@@ -26,6 +28,7 @@ export const getUserById = async (userId, token) => {
   return response.data;
 };
 
+
 export const updateUserData = async (userId, userData, token, isDonador = false) => {
   const url = isDonador
     ? `${API_BASE_URL}/donador/usuarios/${userId}/`
@@ -38,4 +41,16 @@ export const updateUserData = async (userId, userData, token, isDonador = false)
     },
   });
   return response.data;
+};
+export const getUsuarios = (token) => {
+  return axios.get('http://localhost:8000/api/usuarios/', {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+};
+export const registrarUsuario = async (usuario) => {
+  return fetch("http://localhost:8000/api/usuarios/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(usuario)
+  });
 };

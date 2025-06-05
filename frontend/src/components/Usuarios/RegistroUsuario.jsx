@@ -1,7 +1,7 @@
 /*unir la validacion con los campos */
 import React, { useEffect } from "react";
 import CamposUsuario from "./CamposUsuario";
-import { validarFormularioCompleto } from "./ValidacionesUsuario";
+import { validarFormularioCompleto } from "../../hooks/perfil/Usuario/ValidacionesUsuario";
 
 const RegistroUsuario = ({
   datosUsuario,

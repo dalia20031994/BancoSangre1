@@ -1,6 +1,6 @@
 import { forwardRef, useEffect } from "react";
 import { AlertTriangle } from "lucide-react";
-import usarRegistroDireccion from "./usarModificarDireccion";
+import usarRegistroDireccion from "../../../hooks/perfil/Direccion/usarModificarDireccion";
 import LocationMap from "../MapComponents/LocationMap";
 import MunicipioInput from "../FormComponents/MunicipioInput";
 import ColoniaInput from "../FormComponents/ColoniaInput";
@@ -8,20 +8,9 @@ import CalleInput from "../FormComponents/CalleInput";
 import NumeroInput from "../FormComponents/NumeroInput";
 
 const ModificarDireccion = forwardRef((props, ref) => {
-  const {
-    formState,
-    formActions,
-    formValidation,
-    handleSubmit,
-    cargando
-  } = usarRegistroDireccion(props, ref);
-
-  // Efecto para inicializar los valores cuando las props cambian
-  // En ModificarDireccion.jsx
-// En ModificarDireccion.jsx
+  const {formState, formActions,formValidation,handleSubmit,cargando} = usarRegistroDireccion(props, ref);
 useEffect(() => {
   if (props.modoEdicion) {
-    // Actualizar cada campo individualmente
     if (props.nombreMunicipio !== undefined) {
       formActions.setNombreMunicipio(props.nombreMunicipio);
       formActions.setMunicipioTocado(true);
@@ -34,16 +23,8 @@ useEffect(() => {
     if (props.latitud !== undefined) formActions.setLatitud(props.latitud);
     if (props.longitud !== undefined) formActions.setLongitud(props.longitud);
   }
-}, [
-  props.modoEdicion,
-  props.nombreMunicipio, 
-  props.colonia,
-  props.calle,
-  props.numeroExterior,
-  props.numeroInterior,
-  props.latitud,
-  props.longitud
-]);
+}, [props.modoEdicion,props.nombreMunicipio, props.colonia,props.calle,props.numeroExterior,props.numeroInterior,
+  props.latitud,props.longitud]);
   return (
     <div className="min-h-screen">
       <form onSubmit={handleSubmit} className="bg-white max-w-md mx-auto mt-8 p-6 rounded-lg shadow space-y-4">
@@ -57,7 +38,6 @@ useEffect(() => {
             {formValidation.errores.ubicacion}
           </div>
         )}
-
         <LocationMap 
           latitud={formState.latitud} 
           longitud={formState.longitud} 
@@ -65,7 +45,6 @@ useEffect(() => {
           onMarkerDragEnd={formActions.handleMarkerDragEnd}
           onDetectLocation={formActions.detectarUbicacion}
         />
-
         <MunicipioInput
           value={formState.nombreMunicipio}
           onChange={formActions.setNombreMunicipio}
@@ -76,19 +55,16 @@ useEffect(() => {
           onSuggestionClick={formActions.handleSuggestionClick}
           inputRef={formActions.inputRef}
         />
-
         <ColoniaInput
           value={formState.colonia}
           onChange={formActions.setColonia}
           isValid={formValidation.municipioValido && formState.colonia.trim() !== ""}
         />
-
         <CalleInput
           value={formState.calle}
           onChange={formActions.setCalle}
           isValid={formValidation.municipioValido && formState.calle.trim() !== ""}
         />
-
         <NumeroInput
           label="Número Exterior"
           required
@@ -103,7 +79,6 @@ useEffect(() => {
           }
           placeholder='Número Exterior (o "S/N")'
         />
-
         <NumeroInput
           label="Número Interior"
           value={formState.numeroInterior}
@@ -113,7 +88,6 @@ useEffect(() => {
           errorMessage="Número interior inválido. Solo se permiten números mayores a 0 o 'S/N'."
           placeholder="Número Interior (opcional)"
         />
-
         {!props.hideSubmitButton && (
           <div className="flex justify-center">
             <div className="relative group">
@@ -128,7 +102,6 @@ useEffect(() => {
               >
                 {cargando ? "Guardando..." : props.submitButtonText || "Guardar"}
               </button>
-
               {(!formValidation.formularioValido && !cargando) && (
                 <div className="
                   absolute top-full mt-2 left-1/2 -translate-x-1/2
@@ -152,5 +125,4 @@ useEffect(() => {
     </div>
   );
 });
-
 export default ModificarDireccion;

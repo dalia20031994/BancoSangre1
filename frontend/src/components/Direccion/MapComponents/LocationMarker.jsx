@@ -1,12 +1,11 @@
 /* valida las coordenadas, permite que el indicador se mueva muestra el nombre del municipio en un cuadrito */
-
-import React from "react";
 import { Marker, Tooltip } from "react-leaflet";
 import L from "leaflet";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
+import gotaImg from '../../../assets/gota.png';
 
 const DefaultIcon = L.icon({
-  iconUrl: "/gota.png",
+  iconUrl: gotaImg,
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   shadowUrl: markerShadow,
@@ -14,7 +13,6 @@ const DefaultIcon = L.icon({
   shadowAnchor: [13, 41],
 });
 L.Marker.prototype.options.icon = DefaultIcon;
-
 const LocationMarker = ({ latitud, longitud, nombreMunicipio, onDragEnd }) => {
   if (!latitud || !longitud) return null;
 
@@ -28,5 +26,4 @@ const LocationMarker = ({ latitud, longitud, nombreMunicipio, onDragEnd }) => {
     </Marker>
   );
 };
-
 export default LocationMarker;

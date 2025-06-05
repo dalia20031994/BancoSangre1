@@ -37,7 +37,6 @@ const NumeroInput = ({
           />
         )}
       </div>
-
       {error && (
         <p className="text-red-500 text-sm mt-1">
           {errorMessage}
@@ -46,5 +45,4 @@ const NumeroInput = ({
     </div>
   );
 };
-
 export default NumeroInput;

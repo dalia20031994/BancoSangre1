@@ -1,23 +1,27 @@
 import { Routes, Route, Navigate, useParams } from 'react-router-dom';
-import { PaginaLogin } from '../pages/PaginaLogin';
-import { PaginaPrincipal } from '../pages/PaginaPrincipal';
-import { Inicio } from '../pages/Inicio';
-import CompletarRegistro from '../pages/CompletarRegistro';
+import { PaginaLogin } from '../pages/Inicio/PaginaLogin';
+import { PaginaPrincipal } from '../pages/Inicio/PaginaPrincipal';
+import { Inicio } from '../pages/Inicio/Inicio';
+import CompletarRegistro from '../pages/Formularios/CompletarRegistro';
 import { useContext } from 'react';
 import { AuthContext } from '../auth/AuthContext';
-import Registro from "../pages/Registro";
+import Registro from "../pages/Inicio/Registro";
 import Encabezado from '../components/Layout/Encabezado';
-import MapaDonadores from '../pages/MapaDonadores';
-import EditarPerfil from '../pages/EditarPerfil';
-import EditarPerfilDonador from '../pages/EditarPerfilDonador';
-import DonadoresList from '../pages/Donadores';
-import EditarDonador from '../pages/EditarDonador';
-import Citas from '../pages/Citas';
-import CitaProgramada from '../pages/CitaProgramada';
-import HistorialCitas from '../pages/MisCitas';
-import CitasAdmin from '../pages/HistorialCitas';
+import MapaDonadores from '../pages/Donadores/MapaDonadores';
+import EditarPerfil from '../pages/Formularios/EditarPerfil';
+import EditarPerfilDonador from '../pages/Formularios/EditarPerfilDonador';
+import DonadoresList from '../pages/Donadores/DonadoresList';
+import EditarDonador from '../pages/Formularios/EditarDonador';
+import CitaProgramada from '../pages/Citas/CitaProgramada';
+import HistorialCitas from '../pages/Citas/MisCitas';
+import CitasAdmin from '../pages/Citas/HistorialCitas';
 import DonacionFAQ from '../pages/SeccionInformativa';
-import CitasInteligente from '../pages/ControladorCitas';
+import CitasInteligente from '../pages/Citas/ControladorCitas';
+import CrearNotificacionForm from '../pages/CrearNotificaciones';
+import ListaNotificacionesActivas from '../pages/ListaNotificacione';
+import DonadorNotifications from '../pages/DonadorNotificacion';
+import Reportes from '../pages/Reportes';
+
 export function Rutas() {
   const { token } = useContext(AuthContext);
   return (   
@@ -42,6 +46,10 @@ export function Rutas() {
         <Route path="Citas-Donadores" element={<CitasAdmin />} />
         <Route path="editar-perfil-donador" element={<EditarPerfilDonador />} />  
         <Route path="editar-perfil-usuario" element={<EditarPerfil />} />  
+        <Route path="crearNotificacion" element={<CrearNotificacionForm />} />  
+        <Route path="NotificacionesActivas" element={<ListaNotificacionesActivas />} />  
+        <Route path="MisNotificaciones" element={<DonadorNotifications />} />  
+        <Route path="Donaciones" element={<Reportes />} />  
         <Route index element={<Navigate to="inicio" />} />
       </Route>
       {/* para url no registradas regresa al login */}

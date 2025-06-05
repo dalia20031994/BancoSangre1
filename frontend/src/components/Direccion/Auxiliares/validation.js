@@ -10,13 +10,11 @@ export const validarMunicipio = (label, municipios) => {
   const coincidenciaExacta = municipios.find(m =>
     m.label.toLowerCase() === label.toLowerCase()
   );
-
   if (coincidenciaExacta) return { valido: true, municipio: coincidenciaExacta };
 /*manejar las sugerencias de municipio */
   const sugerencias = municipios.filter(m =>
     m.label.toLowerCase().includes(label.toLowerCase())
   );
-
   return {
     valido: false,
     error: sugerencias.length ? "Seleccione una sugerencia" : "Municipio no encontrado",

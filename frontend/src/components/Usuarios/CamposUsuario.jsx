@@ -1,5 +1,5 @@
-import { ErrorMessage } from "../ErrorMessage";
-import { validarCampo } from "../Usuarios/ValidacionesUsuario";
+import { ErrorMessage } from "../Errores/ErrorMessage";
+import { validarCampo } from "../../hooks/perfil/Usuario/ValidacionesUsuario";
 const CamposUsuario = ({ datosUsuario, setDatosUsuario, errores, setErrores }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -7,14 +7,11 @@ const CamposUsuario = ({ datosUsuario, setDatosUsuario, errores, setErrores }) =
     setErrores(nuevosErrores);
     setDatosUsuario(prev => ({ ...prev, [name]: value }));
   };
-
   return (
     <>
       {/* Campo nombre de usuario */}
       <div>
-        <label className="block text-sm font-bold text-teal-700">
-          Nombre de usuario <span className="text-red-500">*</span>
-        </label>
+        <label className="block text-sm font-bold text-teal-700">Nombre de usuario <span className="text-red-500">*</span></label>
         <input
           type="text"
           name="nombre_usuario"
@@ -27,12 +24,9 @@ const CamposUsuario = ({ datosUsuario, setDatosUsuario, errores, setErrores }) =
           <ErrorMessage key={index} message={error} />
         ))}
       </div>
-
       {/* Campo correo */}
       <div>
-        <label className="block text-sm font-bold text-teal-700">
-          Correo electrónico <span className="text-red-500">*</span>
-        </label>
+        <label className="block text-sm font-bold text-teal-700"> Correo electrónico <span className="text-red-500">*</span></label>
         <input
           type="email"
           name="correo"
@@ -45,12 +39,9 @@ const CamposUsuario = ({ datosUsuario, setDatosUsuario, errores, setErrores }) =
           <ErrorMessage key={index} message={error} />
         ))}
       </div>
-
       {/* Campo sexo */}
       <div>
-        <label className="block text-sm font-bold text-teal-700">
-          Sexo <span className="text-red-500">*</span>
-        </label>
+        <label className="block text-sm font-bold text-teal-700">Sexo <span className="text-red-500">*</span></label>
         <select
           name="sexo"
           value={datosUsuario.sexo || ""}
@@ -65,12 +56,9 @@ const CamposUsuario = ({ datosUsuario, setDatosUsuario, errores, setErrores }) =
           <ErrorMessage key={index} message={error} />
         ))}
       </div>
-
       {/* Campo contraseña */}
       <div>
-        <label className="block text-sm font-bold text-teal-700">
-          Contraseña
-        </label>
+        <label className="block text-sm font-bold text-teal-700">Contraseña</label>
         <input
           type="password"
           name="password"
@@ -83,12 +71,9 @@ const CamposUsuario = ({ datosUsuario, setDatosUsuario, errores, setErrores }) =
           <ErrorMessage key={index} message={error} />
         ))}
       </div>
-
       {/* Confirmación de contraseña */}
       <div>
-        <label className="block text-sm font-bold text-teal-700">
-          Confirmar contraseña
-        </label>
+        <label className="block text-sm font-bold text-teal-700">Confirmar contraseña</label>
         <input
           type="password"
           name="password_confirmation"
@@ -104,5 +89,4 @@ const CamposUsuario = ({ datosUsuario, setDatosUsuario, errores, setErrores }) =
     </>
   );
 };
-
 export default CamposUsuario;

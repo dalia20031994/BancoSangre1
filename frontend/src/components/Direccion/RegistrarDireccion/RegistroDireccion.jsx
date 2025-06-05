@@ -1,7 +1,7 @@
 /* renderiza el formulario  para registrar una dirección que incluye los campos de texto y el mapa asi como la logica para la direccion*/
 import { forwardRef } from "react";
 import { AlertTriangle } from "lucide-react";
-import usarRegistroDireccion from "./usarRegistroDireccion";
+import usarRegistroDireccion from "../../../hooks/formulario/usarRegistroDireccion";
 import LocationMap from "../MapComponents/LocationMap";
 import MunicipioInput from "../FormComponents/MunicipioInput";
 import ColoniaInput from "../FormComponents/ColoniaInput";
@@ -9,15 +9,7 @@ import CalleInput from "../FormComponents/CalleInput";
 import NumeroInput from "../FormComponents/NumeroInput";
 
 const RegistroDireccion = forwardRef((props, ref) => {
- 
-const {
-    token,
-    formState,
-    formActions,
-    formValidation,
-    handleSubmit,
-    cargando
-  } = usarRegistroDireccion(props, ref);
+const {formState,formActions,formValidation,handleSubmit,cargando} = usarRegistroDireccion(props, ref);
   return (
     <div className="min-h-screen">
       <form onSubmit={handleSubmit} className="bg-white max-w-md mx-auto mt-8 p-6 rounded-lg shadow space-y-4">
@@ -31,7 +23,6 @@ const {
             {formValidation.errores.ubicacion}
           </div>
         )}
-
         <LocationMap 
           latitud={formState.latitud} 
           longitud={formState.longitud} 
@@ -39,7 +30,6 @@ const {
           onMarkerDragEnd={formActions.handleMarkerDragEnd}
           onDetectLocation={formActions.detectarUbicacion}
         />
-
         <MunicipioInput
           value={formState.nombreMunicipio}
           onChange={formActions.setNombreMunicipio}
@@ -50,21 +40,18 @@ const {
           onSuggestionClick={formActions.handleSuggestionClick}
           inputRef={formActions.inputRef}
         />
-
         <ColoniaInput
           value={formState.colonia}
           onChange={formActions.setColonia}
           disabled={!formValidation.municipioValido}
           isValid={formValidation.municipioValido && formState.colonia.trim() !== ""}
         />
-
         <CalleInput
           value={formState.calle}
           onChange={formActions.setCalle}
           disabled={!formValidation.municipioValido}
           isValid={formValidation.municipioValido && formState.calle.trim() !== ""}
         />
-
         <NumeroInput
           label="Número Exterior"
           required
@@ -80,7 +67,6 @@ const {
           }
           placeholder='Número Exterior (o "S/N")'
         />
-
         <NumeroInput
           label="Número Interior"
           value={formState.numeroInterior}
@@ -91,7 +77,6 @@ const {
           errorMessage="Número interior inválido. Solo se permiten números mayores a 0 o 'S/N'."
           placeholder="Número Interior (opcional)"
         />
-
         {!props.hideSubmitButton && (
           <div className="flex justify-center">
             <div className="relative group">
@@ -106,7 +91,6 @@ const {
               >
                 {cargando ? "Guardando..." : props.submitButtonText || "Guardar"}
               </button>
-
               {(!formValidation.formularioValido && !cargando) && (
                 <div className="
                   absolute top-full mt-2 left-1/2 -translate-x-1/2
@@ -130,5 +114,4 @@ const {
     </div>
   );
 });
-
 export default RegistroDireccion;
